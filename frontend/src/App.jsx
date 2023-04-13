@@ -1,11 +1,12 @@
 import "./App.css";
+import SelectStoryCard from "@components/SelectStoryCard";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <p className="text-center">coucou</p>
+      <SelectStoryCard />
     </div>
   );
-}
+};
 
 export default App;
