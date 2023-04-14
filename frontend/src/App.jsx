@@ -1,11 +1,12 @@
 import "./App.css";
 import Chronometre from "@components/Timer";
+import Ecran from "@components/Ecran";
 
 function App() {
   return (
     <div>
-      <p className="text-center">coucou</p>
       <Chronometre />
+      <Ecran />
     </div>
   );
 }
