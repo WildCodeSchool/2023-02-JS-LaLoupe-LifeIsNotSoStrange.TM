@@ -28,14 +28,17 @@ const SelectStoryCard = () => {
   const selectStory = selectStoryList[0];
   return (
     <div className="bg-amber-400 p-8 flex flex-col items-center rounded-lg justify-center max-md:m-16">
-      <h4 className="pt-4 text-2xl">{selectStory.tittle}</h4>
+      <h4 className=" font-mono pt-4 text-xl">{selectStory.tittle}</h4>
       <img
-        className=" object-contain px-8 py-8 max-lg: rounded-md"
+        className=" object-contain rounded-md my-4 "
         src={selectStory.image}
         alt=""
       />
-      <p className=" text-lg">{selectStory.summary}</p>
-      <button className="bg-teal-500 p-1 mt-3 rounded-md px-3" type="button">
+      <p className=" font-mono text-lg">{selectStory.summary}</p>
+      <button
+        className="bg-teal-300 font-mono p-1 mt-3 rounded-md px-3"
+        type="button"
+      >
         Play
       </button>
     </div>
