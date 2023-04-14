@@ -4,22 +4,13 @@
     url("src/assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
       format("truetype");
 }
-
-* {
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 1.3rem;
-}
-html {
-  background-color: rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-head {
-  display: block;
-}
 .Chrono {
+  min-width: 30%;
+  text-align: center;
   height: auto;
   margin-top: 20px;
-  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
   background-color: black;
   color: white;
