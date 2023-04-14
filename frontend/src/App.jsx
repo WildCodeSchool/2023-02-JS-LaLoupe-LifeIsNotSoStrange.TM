@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
+import Chronometre from "./components/Timer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Intro />
       <Footer />
+      <Chronometre />
     </div>
   );
 }
