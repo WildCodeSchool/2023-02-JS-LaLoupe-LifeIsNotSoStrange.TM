@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: rgba(31, 41, 55, 0.933);
+  font-family: "Orbitron", sans-serif;
+}
+
+.gameTitle {
+  @apply text-4xl font-medium text-center text-white;
+  text-shadow: 2px 4px 9px rgba(0, 0, 0, 0.66);
+}
+
+.intro-paragraphe {
+  @apply text-sm text-center mt-10 text-white md:text-xl;
+}

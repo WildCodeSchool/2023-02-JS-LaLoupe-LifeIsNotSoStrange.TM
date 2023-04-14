@@ -1,9 +1,14 @@
 import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Intro from "./components/Intro";
 
 function App() {
   return (
     <div>
-      <p className="text-center">coucou</p>
+      <Header />
+      <Intro />
+      <Footer />
     </div>
   );
 }
