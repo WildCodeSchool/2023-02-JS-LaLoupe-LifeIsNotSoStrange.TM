@@ -1,10 +1,15 @@
 import "./App.css";
-import Chronometre from "@components/Timer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Intro from "./components/Intro";
+import Chronometre from "./components/Timer";
 
 function App() {
   return (
     <div>
-      <p className="text-center">coucou</p>
+      <Header />
+      <Intro />
+      <Footer />
       <Chronometre />
     </div>
   );
