@@ -14,7 +14,7 @@ const selectStoryList = [
   {
     tittle: "Where is Aqua ?",
     summary: "Aqua is a very special color...",
-    image: ".src/assets/Who-s-is-Aqua-colors.jpg",
+    image: ".src/assets/panel-colors.png",
   },
   {
     tittle: "Xavier and the little canibal unicorns ponies.",
@@ -25,16 +25,16 @@ const selectStoryList = [
 ];
 
 const SelectStoryCard = () => {
-  const selectStory = selectStoryList[0];
+  const selectStory = selectStoryList[2];
   return (
-    <div className="bg-amber-400 p-8 flex flex-col items-center rounded-lg justify-center max-md:m-16">
-      <h4 className=" font-mono pt-4 text-xl">{selectStory.tittle}</h4>
-      <img
-        className=" object-contain rounded-md my-4 "
-        src={selectStory.image}
-        alt=""
-      />
-      <p className=" font-mono text-lg">{selectStory.summary}</p>
+    <div className="bg-amber-400 p-8 flex flex-col items-center rounded-lg max-w-xs justify-center max-md:m-16">
+      <h4 className=" font-mono font-extrabold text-center text-xs">
+        {selectStory.tittle}
+      </h4>
+      <img className=" rounded-md my-4" src={selectStory.image} alt="" />
+      <p className=" text-center font-mono font-extrabold text-xs">
+        {selectStory.summary}
+      </p>
       <button
         className="bg-teal-300 font-mono p-1 mt-3 rounded-md px-3"
         type="button"

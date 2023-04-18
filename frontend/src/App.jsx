@@ -1,5 +1,5 @@
 import "./App.css";
-import SelectStoryCard from "@components/SelectStoryCard";
+import SelectStoryCard from "./components/SelectStoryCard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
