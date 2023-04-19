@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 import Chronometre from "./components/Timer";
 import Ecran from "./components/Ecran";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Intro />
       <Chronometre />
       <Ecran />
+      <Contact />
       <Footer />
     </div>
   );
