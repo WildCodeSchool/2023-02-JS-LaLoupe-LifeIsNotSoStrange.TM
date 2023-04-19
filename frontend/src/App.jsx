@@ -1,18 +1,22 @@
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Intro from "./components/Intro";
-import Chronometre from "./components/Timer";
-import Ecran from "./components/Ecran";
+import Home from "./components/Home";
+import Leaderboard from "./components/Leaderboard";
+import Contact from "./components/Contact";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col justify-between items-center">
-      <Header />
-      <Intro />
-      <Chronometre />
-      <Ecran />
-      <Footer />
+    <div>
+      <nav>
+        <NavBar />
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
