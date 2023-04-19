@@ -5,7 +5,7 @@ import Leaderboard from "./components/Leaderboard";
 import Contact from "./components/Contact";
 import NavBar from "./components/NavBar";
 
-const App = () => {
+function App() {
   return (
     <div>
       <nav>
