@@ -6,12 +6,16 @@ body {
   background-color: rgba(31, 41, 55, 0.933);
   font-family: "Orbitron", sans-serif;
 }
-
-.gameTitle {
-  @apply text-4xl font-medium text-center text-white;
-  text-shadow: 2px 4px 9px rgba(0, 0, 0, 0.66);
+nav {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
 }
-
 .intro-paragraphe {
-  @apply text-sm text-center mt-10 text-white md:text-xl;
+  @apply text-xs text-center text-white md:text-xl;
+  border: solid black 1px;
+  border-radius: 6px;
+  max-width: 90%;
+  background-color: rgba(27, 36, 49, 0.933);
+  margin-top: 16px;
 }
