@@ -1,11 +1,10 @@
 import "./Ecran.css";
-import screen from "../assets/screen.jpg";
+import screen from "../assets/gameImg1.jpg";
 
 function Ecran() {
   return (
     <div className="Bureau">
-      <img src={screen} alt="" />
-      <h1>Toronto: 20:00 pm</h1>
+      <img src={screen} alt="toronto office at night" />
     </div>
   );
 }
