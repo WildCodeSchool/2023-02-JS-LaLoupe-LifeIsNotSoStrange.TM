@@ -1,0 +1,10 @@
+.gameTitle {
+  @apply text-3xl font-medium text-white;
+  text-shadow: 2px 4px 9px rgba(0, 0, 0, 0.66);
+}
+
+@media screen and (max-width: 768px) {
+  .gameTitle {
+    @apply text-xl;
+  }
+}
