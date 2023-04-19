@@ -3,14 +3,14 @@ import Footer from "./Footer";
 import Intro from "./Intro";
 import Chronometre from "./Timer";
 import Ecran from "./Ecran";
-import SelectStoryCard from "./SelectStoryCard";
+import SelectStoryList from "./SelectStoryList";
 
 function Home() {
   return (
     <div className="min-h-screen flex flex-col justify-between items-center">
       <Header />
       <Intro />
-      <SelectStoryCard />
+      <SelectStoryList />
       <Chronometre />
       <Ecran />
       <Footer />
