@@ -5,6 +5,7 @@ import Leaderboard from "./components/Leaderboard";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import PartyGame from "./components/PartyGame";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/game" element={<PartyGame />} />
       </Routes>
       <Footer />
     </div>
