@@ -4,33 +4,68 @@ form {
   text-align: center;
   background-color: rgba(15, 34, 59, 0.781);
   margin-top: 6px;
-  margin-bottom: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  width: 90%;
 }
 #fullName {
   border: 2px solid black;
-  margin-bottom: 6px;
-  width: 90%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 70%;
+  border-radius: 25px;
 }
 #email {
-  margin-bottom: 6px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   border: 2px solid black;
-  width: 90%;
+  width: 70%;
+  border-radius: 25px;
 }
 #message {
-  margin-bottom: 6px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   border: 2px solid black;
-  width: 90%;
+  width: 70%;
   height: 200px;
+  border-radius: 25px;
 }
 button {
   color: white;
-  margin-bottom: 6px;
+  margin-bottom: 30px;
 }
 button:hover {
   border: 2px solid white;
   border-radius: 100%;
-  margin-bottom: 6px;
+  margin-bottom: 30px;
 }
 p {
   color: white;
+}
+@media screen and (min-width: 1080px) {
+  form {
+    margin-top: 30px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    box-shadow: 8px 6px 6px rgba(0, 0, 0, 0.767);
+    font-size: larger;
+  }
+}
+#fullName.error {
+  border: 2px solid red;
+}
+#email.error {
+  border: 2px solid red;
+}
+#message.error {
+  border: 2px solid red;
+}
+.size {
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 0;
 }
