@@ -18,7 +18,7 @@ function NavBar() {
               <Link to="/">Accueil</Link>
             </li>
             <li>
-              <Link to="/leaderboard">Classement</Link>
+              <Link to="/classement">Classement</Link>
             </li>
             <li>
               <Link to="/contact">Contact</Link>
@@ -58,7 +58,7 @@ function NavBar() {
             <Link to="/">Accueil</Link>
           </li>
           <li>
-            <Link to="/leaderboard">Classement</Link>
+            <Link to="/classement">Classement</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
