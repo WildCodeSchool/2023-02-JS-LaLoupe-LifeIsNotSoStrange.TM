@@ -63,7 +63,7 @@ function Story() {
     } else if (action === "chapter3") {
       setChapter("Chapitre 3");
       setMessage(
-        "Vous reussissez a trouver le bon code et ouvrez la porte quand au moment de sortire vous appercevez, deux Gorilles arrivent en voiture. Ils vous dévisagent d'un air ahurie en vous voyant sortir des locaux. Que faites-vous ?"
+        "Vous reussissez a trouver le bon code et ouvrez la porte quand au moment de sortir vous appercevez, deux Gorilles arrivent en voiture. Ils vous dévisagent d'un air ahurie en vous voyant sortir des locaux. Que faites-vous ?"
       );
       setResult("");
       setOptions([
@@ -85,7 +85,7 @@ function Story() {
     } else if (action === "chapter4") {
       setChapter("Chapitre 4");
       setMessage(
-        "Vous réussissez à vous enfuir. Heureusement, tu es plus rapide qu'un gorille. Eh oui, les gorilles ne savent pas très bien conduire. Tu te retournes pour t'assurer que tu les as bien semé reçois un appel de ton ancien partenaire de police: Xavier, ça faisait un bail que tu avais de nouvelle de lui. Que fais-tu ?"
+        "Vous réussissez à vous enfuir. Heureusement, tu es plus rapide qu'un gorille. Eh oui, les gorilles ne savent pas très bien conduire. Tu te retournes pour t'assurer que tu les as bien semé et tu reçois un appel de ton ancien partenaire de police: Xavier, ça faisait un bail que tu n'avais plus de nouvelle de lui. Que fais-tu ?"
       );
 
       setOptions([
@@ -106,7 +106,7 @@ function Story() {
     } else if (action === "chapter5") {
       setChapter("Chapitre 5");
       setMessage(
-        "vous avez reussi a trouvez lzs coordoné corespondante au chute du niagara et en y allant votre épreuve vinale vous y attend de pied ferme: AH AH ! C'est moi qui suis le suspect! dit Quentin de Vancouver, le pablo escobar canadien."
+        "vous avez reussi a trouvez les coordonées corespondante aux chutes du niagara et en y allant votre épreuve finale vous y attend de pied ferme: AH AH ! C'est moi qui suis le suspect! dit Quentin de Vancouver, le pablo escobar canadien."
       );
       setResult("");
       setOptions([
@@ -115,20 +115,20 @@ function Story() {
           text: "Vous vous battez, mais attention ça glisse.",
           action: "lose",
           result:
-            "vous vous battez férocement et vos êtes sur les point de glisser mais vous rattrapez in extremis mar contre votre lacé ce défait ce qui vous fait tomber au moment où vous refaites un pas. (ah ba ça cépadpo)",
+            "vous vous battez férocement et vos êtes sur les point de glisser mais vous vous rattrapez in extremis par contre votre lasset se défait ce qui vous fait tomber au moment où vous refaites un pas. (ah ba ça cépadpo)",
         },
         {
           id: "option10",
           text: "Vous lui révélevez vos sentiments et vous espérez qu'il change.",
           action: "chapter6",
           result:
-            "vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonement de l'amour rechauffe vos coeur noir ;)",
+            "Vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonement de l'amour rechauffe vos coeur noir ;)",
         },
       ]);
     } else if (action === "chapter6") {
       setChapter("Chapitre 6");
       setMessage(
-        "vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonement de l'amour rechauffe vos coeurs noirs ;)"
+        "Vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonement de l'amour rechauffe vos coeurs noirs ;)"
       );
       setResult("c'est gagné");
       setOptions([
