@@ -1,5 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function SelectStoryCard({ title, image, summary }) {
   return (
@@ -15,12 +16,15 @@ export default function SelectStoryCard({ title, image, summary }) {
       <p className="text-center text-white font-mono font-extrabold text-xs">
         {summary}
       </p>
-      <button
-        className="bg-pink-200 font-mono p-1 mt-3 rounded-md px-3"
-        type="button"
-      >
-        Play
-      </button>
+
+      <Link to="/game">
+        <button
+          className="bg-pink-200 font-mono p-1 mt-3 rounded-md px-3 w-[150px]"
+          type="button"
+        >
+          Play
+        </button>
+      </Link>
     </div>
   );
 }
