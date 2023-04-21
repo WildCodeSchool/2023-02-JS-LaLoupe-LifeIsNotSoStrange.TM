@@ -8,10 +8,6 @@ ul {
 
 @media screen and (max-width: 768px) {
   .navbar {
-    background-color: rgba(27, 36, 49, 0.933);
-
-    border: solid black 1px;
-    border-radius: 2%;
-    z-index: 7;
+    color: white;
   }
 }

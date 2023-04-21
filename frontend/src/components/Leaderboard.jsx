@@ -1,6 +1,6 @@
-import "./Classement.css";
+import "./Leaderboard.css";
 
-function Classement() {
+function Leaderboard() {
   return (
     <div className="tableau">
       <table>
@@ -49,4 +49,4 @@ function Classement() {
   );
 }
 
-export default Classement;
+export default Leaderboard;

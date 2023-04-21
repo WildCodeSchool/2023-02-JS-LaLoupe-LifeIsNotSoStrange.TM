@@ -29,7 +29,7 @@ const selectStorys = [
 ];
 export default function SelectStoryList() {
   return (
-    <div className="lg: flex flex-wrap">
+    <div className="lg: flex flex-wrap m-auto">
       {selectStorys.map((selectStory) => (
         <SelectStoryCard
           key={`storycard-${selectStorys.id}`}
