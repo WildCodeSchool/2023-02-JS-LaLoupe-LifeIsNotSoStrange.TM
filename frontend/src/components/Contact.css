@@ -36,7 +36,7 @@ button {
   color: white;
   margin-bottom: 30px;
 }
-button:hover {
+.contactButton:hover {
   border: 2px solid white;
   border-radius: 100%;
   margin-bottom: 30px;

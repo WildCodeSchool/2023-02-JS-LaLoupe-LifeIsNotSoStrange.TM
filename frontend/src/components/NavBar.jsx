@@ -11,7 +11,7 @@ function NavBar() {
 
   return (
     <div className="navbar">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between text-white">
         <div className="text-white">
           <ul className="hidden md:flex space-x-4">
             <li>
@@ -31,7 +31,7 @@ function NavBar() {
           onClick={handleToggle}
         >
           <svg
-            className="w-6 h-6"
+            className="mt-3 w-6 h-6"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ function NavBar() {
         </button>
       </div>
       {isOpen && (
-        <ul className="md:hidden flex flex-col space-y-4 mt-4">
+        <ul className="md:hidden flex flex-col space-y-4">
           <li>
             <Link to="/">Accueil</Link>
           </li>

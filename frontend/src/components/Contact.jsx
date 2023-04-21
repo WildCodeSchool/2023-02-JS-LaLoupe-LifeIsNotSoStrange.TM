@@ -79,7 +79,9 @@ export default function FormWithMultipleState() {
           />
           {errorMessage && <p className="size">Message is required</p>}
         </label>
-        <button type="submit">Send Message</button>
+        <button id="contactButton" type="submit">
+          Send Message
+        </button>
       </form>
       {isSubmit && (
         <p>
