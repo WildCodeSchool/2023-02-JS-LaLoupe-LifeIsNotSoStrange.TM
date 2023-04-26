@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import "./Timer.css";
 
-function Chronometre() {
-  const [tempsRestant, setTempsRestant] = useState(1200);
-
+function Chronometre({ setTimer, tempsRestant, setTempsRestant }) {
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (tempsRestant === 0) {
@@ -12,6 +11,7 @@ function Chronometre() {
         setTempsRestant(tempsRestant - 1);
       }
     }, 1000);
+    setTimer(intervalId);
     return () => {
       clearInterval(intervalId);
     };
@@ -27,5 +27,11 @@ function Chronometre() {
     </div>
   );
 }
+
+Chronometre.propTypes = {
+  tempsRestant: PropTypes.string.isRequired,
+  setTempsRestant: PropTypes.func.isRequired,
+  setTimer: PropTypes.func.isRequired,
+};
 
 export default Chronometre;
