@@ -65,21 +65,26 @@ const Quizz = () => {
       <div>
         <h1>Résultat</h1>
         <p>
-          Vous avez obtenu {score} bonnes réponses sur {questions.length}{" "}
-          questions.
+          Vous avez obtenu {score} pourboires sur {questions.length} commandes.
         </p>
       </div>
     );
   }
 
   return (
-    <div>
-      <h1>Question {currentQuestion + 1}</h1>
-      <h2>{questions[currentQuestion].question}</h2>
+    <div className="font-bold m-4 rounded-md flex-col bg-gradient-to-tr to-blue-400 from-green-500 p-10">
+      <h1>Commande {currentQuestion + 1}</h1>
+      <p className="  m-auto animate-typing whitespace-normal overflow-hidden border-r-2 border-r-white pr-5 text-white font-bold">
+        {questions[currentQuestion].question}
+      </p>
       <ul>
         {questions[currentQuestion].options.map((option) => (
-          <li key={option.id}>
-            <button type="button" onClick={() => handleAnswer(option)}>
+          <li className="" key={option.id}>
+            <button
+              className="my-4  text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              type="button"
+              onClick={() => handleAnswer(option)}
+            >
               {option}
             </button>
           </li>
