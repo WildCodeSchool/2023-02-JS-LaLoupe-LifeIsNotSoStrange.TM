@@ -1,8 +1,8 @@
-import "./Ecran.css";
+import "./Screen.css";
 import screen from "../assets/gameImg1.jpg";
 import Map from "./MapApi";
 
-function Ecran() {
+function Screen() {
   return (
     <div className="relative">
       <img src={screen} alt="toronto office at night" className="z-0" />
@@ -13,4 +13,4 @@ function Ecran() {
   );
 }
 
-export default Ecran;
+export default Screen;

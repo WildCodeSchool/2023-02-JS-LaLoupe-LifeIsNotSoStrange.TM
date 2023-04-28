@@ -1,72 +1,79 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./NavBar.css";
 
-function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
+export default function NavBar() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      setIsNavOpen((prev) => !prev);
+    }
   };
 
   return (
-    <div className="navbar">
-      <div className="flex justify-between text-white">
-        <div className="text-white">
-          <ul className="hidden md:flex space-x-4">
-            <li>
-              <Link to="/">Accueil</Link>
-            </li>
-            <li>
-              <Link to="/classement">Classement</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
-        <button
-          type="button"
-          className="md:hidden text-white focus:outline-none"
-          onClick={handleToggle}
-        >
-          <svg
-            className="mt-3 w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+    <div className="flex justify-between mt-4 mr-4">
+      <nav>
+        <section className="mobile-menu flex md:hidden">
+          <div
+            className="burger-icon space-y-2"
+            onKeyDown={handleKeyDown}
+            onClick={() => setIsNavOpen((prev) => !prev)}
+            role="button"
+            tabIndex={0}
           >
-            {isOpen ? (
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M4 5h12a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h12a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h12a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-              />
-            ) : (
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M4 5h12a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h12a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 5h12a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-              />
-            )}
-          </svg>
-        </button>
-      </div>
-      {isOpen && (
-        <ul className="md:hidden flex flex-col space-y-4">
+            <span className="block h-0.5 w-8 animate-pulse bg-white" />
+            <span className="block h-0.5 w-8 animate-pulse bg-white" />
+            <span className="block h-0.5 w-8 animate-pulse bg-white" />
+          </div>
+
+          <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+            {" "}
+            <div
+              className="cross-icon absolute top-0 right-0 px-8 py-8"
+              onClick={() => setIsNavOpen(false)}
+              onKeyDown={handleKeyDown}
+              role="button"
+              tabIndex={-1}
+            >
+              <svg
+                className="h-8 w-8 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <ul className="menu-mobile-open flex flex-col items-center justify-between min-h-[250px]">
+              <li className="border-b border-white my-8 uppercase">
+                <Link to="/">Accueil</Link>
+              </li>
+              <li className="border-b border-white my-8 uppercase">
+                <Link to="/leaderboard">Classement</Link>
+              </li>
+              <li className="border-b border-white my-8 uppercase">
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <ul className="desktop-menu hidden space-x-8 md:flex">
           <li>
             <Link to="/">Accueil</Link>
           </li>
           <li>
-            <Link to="/classement">Classement</Link>
+            <Link to="/leaderboard">Classement</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-      )}
+      </nav>
     </div>
   );
 }
-
-export default NavBar;

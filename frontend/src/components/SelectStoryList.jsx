@@ -9,9 +9,9 @@ const selectStorys = [
   },
   {
     id: 2,
-    title: "Back to the Maya's life !",
-    summary: "This time you took your dictionary.",
-    image: "./src/assets/maya-story.jpg",
+    title: "Cocktail rush !",
+    summary: "Will you survive this rush?",
+    image: "./src/assets/cocktail-au-comptoir.jpg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const selectStorys = [
 ];
 export default function SelectStoryList() {
   return (
-    <div className="lg: flex flex-wrap m-auto">
+    <div className="lg: flex flex-wrap m-auto justify-center">
       {selectStorys.map((selectStory) => (
         <SelectStoryCard
           key={`storycard-${selectStory.id}`}
