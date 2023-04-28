@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import PartyGame from "./components/PartyGame";
 import Leaderboard from "./components/Leaderboard";
+import SelectStoryList from "./components/SelectStoryList";
 
 const board = [
   {
@@ -46,6 +47,21 @@ const board = [
   },
 ];
 function App() {
+  const [avatarParams, setAvatarParams] = useState({
+    avatarStyle: "Transparent",
+    accessoriesType: "Round",
+    topType: "LongHairBob",
+    clotheColor: "Blue02",
+    clotheType: "ShirtCrewNeck",
+    eyeType: "Surprised",
+    eyebrowType: "SadConcernedNatural",
+    facialHairColor: "Black",
+    facialHairType: "BeardLight",
+    hairColor: "Brown",
+    mouthType: "Twinkle",
+    skinColor: "Pale",
+    pseudo: "",
+  });
   const [players] = useState(board);
   const [tempsRestant, setTempsRestant] = useState(1200);
   const [timer, setTimer] = useState();
@@ -57,12 +73,22 @@ function App() {
     <div className="min-h-screen relative pb-[60px]">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              avatarParams={avatarParams}
+              setAvatarParams={setAvatarParams}
+            />
+          }
+        />
         <Route path="/contact" element={<Contact />} />
         <Route
           path="/game"
           element={
             <PartyGame
+              avatarParams={avatarParams}
+              pseudo={avatarParams.pseudo}
               tempsRestant={tempsRestant}
               setTempsRestant={setTempsRestant}
               timer={timer}
@@ -71,6 +97,7 @@ function App() {
             />
           }
         />
+        <Route path="/selectstory" element={<SelectStoryList />} />
         <Route
           path="/leaderboard"
           element={<Leaderboard players={players} />}

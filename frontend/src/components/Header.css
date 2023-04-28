@@ -51,6 +51,5 @@
   .gameTitle {
     @apply text-xl;
     margin-top: 10px;
-    margin-left: -5%;
   }
 }
