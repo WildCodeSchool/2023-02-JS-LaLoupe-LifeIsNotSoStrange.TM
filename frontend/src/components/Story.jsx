@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-function Story({ endGame }) {
-  const [chapter, setChapter] = useState("WELLCOME !!!");
+function Story() {
+  const [chapter, setChapter] = useState("WELCOME !!!");
   const [message, setMessage] = useState(
     "La nuit tombe sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activitées criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencer"
   );
