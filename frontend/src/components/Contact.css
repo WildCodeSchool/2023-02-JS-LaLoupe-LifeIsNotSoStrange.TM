@@ -3,6 +3,7 @@ form {
   flex-direction: column;
   text-align: center;
   background-color: rgba(15, 34, 59, 0.781);
+  border: 1px solid black;
   margin-top: 6px;
   margin-left: auto;
   margin-right: auto;
@@ -32,12 +33,12 @@ form {
   height: 200px;
   border-radius: 25px;
 }
-button {
+#contactbutton {
   color: white;
   margin-bottom: 30px;
 }
-.contactButton:hover {
-  border: 2px solid white;
+#contactbutton:hover {
+  border: solid 2px white;
   border-radius: 100%;
   margin-bottom: 30px;
 }

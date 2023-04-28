@@ -1,22 +1,35 @@
 import PropTypes from "prop-types";
 import Timer from "./Timer";
-import Ecran from "./Ecran";
+import Screen from "./Screen";
 import Story from "./Story";
 import AvatarDisplay from "./AvatarDisplay";
 
-export default function PartyGame({ avatarParams }) {
+export default function PartyGame({
+  avatarParams,
+  tempsRestant,
+  setTempsRestant,
+  setTimer,
+  endGame,
+}) {
   return (
     <div>
       <AvatarDisplay avatarParams={avatarParams} />
       <p>{avatarParams.pseudo}</p>
-      <Timer />
-      <Ecran />
-      <Story />
+      <Timer
+        tempsRestant={tempsRestant}
+        setTempsRestant={setTempsRestant}
+        setTimer={setTimer}
+      />
+      <Screen />
+      <Story endGame={endGame} />
     </div>
   );
 }
-
 PartyGame.propTypes = {
+  tempsRestant: PropTypes.string.isRequired,
+  setTempsRestant: PropTypes.func.isRequired,
+  setTimer: PropTypes.func.isRequired,
+  endGame: PropTypes.func.isRequired,
   avatarParams: PropTypes.shape({
     avatarStyle: PropTypes.string.isRequired,
     accessoriesType: PropTypes.string.isRequired,
