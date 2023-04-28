@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { useState } from "react";
 
-function Story() {
+function Story({ endGame }) {
   const [chapter, setChapter] = useState("WELLCOME !!!");
   const [message, setMessage] = useState(
     "La nuit tombe sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activitées criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencer"
@@ -131,6 +132,7 @@ function Story() {
         "Vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonement de l'amour rechauffe vos coeurs noirs ;)"
       );
       setResult("C'est gagné !");
+      endGame();
       setOptions([
         {
           id: "",
@@ -167,5 +169,9 @@ function Story() {
     </div>
   );
 }
+
+Story.propTypes = {
+  endGame: PropTypes.func.isRequired,
+};
 
 export default Story;

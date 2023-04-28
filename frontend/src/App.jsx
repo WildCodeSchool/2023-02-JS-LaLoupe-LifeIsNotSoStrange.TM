@@ -8,7 +8,7 @@ import Header from "./components/Header";
 import PartyGame from "./components/PartyGame";
 import Leaderboard from "./components/Leaderboard";
 
-const tableau = [
+const board = [
   {
     id: 1,
     pseudo: "Xavier",
@@ -46,9 +46,13 @@ const tableau = [
   },
 ];
 function App() {
-  const [players] = useState(tableau);
+  const [players] = useState(board);
   const [tempsRestant, setTempsRestant] = useState(1200);
   const [timer, setTimer] = useState();
+  const endGame = () => {
+    clearInterval(timer);
+    /* Verifier que le joueur qui a fini la partie n'a pas deja un classement , si il est dedans verifier si le temps restant est meilleur que l'ancien si il l'est modfier ou non si le resultatt est meilleur et le modifier en conséquence si le jouer n l'est pas ajouter les informations dans le classement ! */
+  };
   return (
     <div className="min-h-screen relative pb-[60px]">
       <Header />
@@ -63,6 +67,7 @@ function App() {
               setTempsRestant={setTempsRestant}
               timer={timer}
               setTimer={setTimer}
+              endGame={endGame}
             />
           }
         />
