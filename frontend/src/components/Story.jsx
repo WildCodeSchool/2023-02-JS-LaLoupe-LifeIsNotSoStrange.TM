@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Story() {
-  const [chapter, setChapter] = useState("WELLCOME !!!");
+  const [chapter, setChapter] = useState("WELCOME !!!");
   const [message, setMessage] = useState(
     "La nuit tombée sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activités criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a comencé"
   );
