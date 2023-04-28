@@ -6,6 +6,7 @@ function Home() {
     <div className="min-h-screen flex flex-col justify-between items-center">
       <Intro />
       <SelectStoryList />
+      <script src="EffetHome.js" />
     </div>
   );
 }

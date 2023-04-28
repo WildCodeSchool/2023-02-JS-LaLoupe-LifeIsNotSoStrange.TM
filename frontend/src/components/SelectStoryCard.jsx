@@ -32,5 +32,5 @@ export default function SelectStoryCard({ title, image, summary }) {
 SelectStoryCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  summary: PropTypes.isRequired,
+  summary: PropTypes.string.isRequired,
 };

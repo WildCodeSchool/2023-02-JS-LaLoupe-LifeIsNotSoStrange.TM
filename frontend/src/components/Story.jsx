@@ -1,9 +1,10 @@
+/* eslint-disable */
 import React, { useState } from "react";
 
 function Story() {
-  const [chapter, setChapter] = useState("WELLCOME !!!");
+  const [chapter, setChapter] = useState("WELCOME !!!");
   const [message, setMessage] = useState(
-    "La nuit tombée sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activités criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a comencé"
+    "La nuit tombée sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activités criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencé."
   );
   const [result, setResult] = useState();
   const [options, setOptions] = useState([
@@ -14,6 +15,24 @@ function Story() {
       result: "",
     },
   ]);
+
+  // Fonction pour réinitialiser le jeu au chapitre 1
+  const restartGame = () => {
+    setChapter("WELCOME !!!");
+    setMessage(
+      "La nuit tombée sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activités criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencé."
+    );
+    setResult();
+    setOptions([
+      {
+        id: "option1",
+        text: "Commencer l'histoire",
+        action: "chapter1",
+        result: "",
+      },
+    ]);
+  };
+
   const handleOptionClick = (action) => {
     if (action === "lose") {
       setMessage();
@@ -30,7 +49,7 @@ function Story() {
           id: "option1",
           text: "Vous reprenez un verre et vous vous dîtes fichu chat",
           action: "lose",
-          result: "intoxication à l'alcool vous décedez gg go next. (perdu)",
+          result: "intoxication à l'alcool vous décidez gg go next. (perdu)",
         },
         {
           id: "option2",
@@ -43,7 +62,7 @@ function Story() {
     } else if (action === "chapter2") {
       setChapter("Chapitre 2");
       setMessage(
-        "Vous vous rapprochez de la fenêtre et distinguez une silhouette ressemblant au suspect principal de votre précedente enquête (c'était un échec). Vous prenez votre chapeau de détective et courrez dans la rue pour interpeller le suspect. Vous arrivez dans la rue et voyez le suspect partir dans une ruelle, vous décidez de le suivre, mais un homme vous assomme. Vous vous réveillez dans une pièce. Votre seul moyen de s'échapper est de trouver le code qui ouvre la porte. Que faites-vous ?"
+        "Vous vous rapprochez de la fenêtre et distinguez une silhouette ressemblant au suspect principal de votre précédente enquête (c'était un échec). Vous prenez votre chapeau de détective et courrez dans la rue pour interpeller le suspect. Vous arrivez dans la rue et voyez le suspect partir dans une ruelle, vous décidez de le suivre, mais un homme vous assomme. Vous vous réveillez dans une pièce. Votre seul moyen de s'échapper est de trouver le code qui ouvre la porte. Que faites-vous ?"
       );
       setResult("oui");
       setOptions([
@@ -55,7 +74,7 @@ function Story() {
         },
         {
           id: "option4",
-          text: "tape le bon code (ça va c'est pas la mer a boir non plus).",
+          text: "Tape le bon code (ça va ce n'est pas la mer à boir non plus).",
           action: "chapter3",
           result: "Bravo chapitre suivant.",
         },
@@ -63,7 +82,7 @@ function Story() {
     } else if (action === "chapter3") {
       setChapter("Chapitre 3");
       setMessage(
-        "Vous reussissez a trouver le bon code et ouvrez la porte quand au moment de sortire vous appercevez, deux Gorilles arrivent en voiture. Ils vous dévisagent d'un air ahurie en vous voyant sortir des locaux. Que faites-vous ?"
+        "Vous réussissez à trouver le bon code et ouvrez la porte quant au moment de sortir vous apercevez, deux gorilles arrivent en voiture. Ils vous dévisagent d'un air ahuri en vous voyant sortir des locaux. Que faites-vous ?"
       );
       setResult("");
       setOptions([
@@ -79,7 +98,7 @@ function Story() {
           text: "Vous prenez vos jambes à votre coup.",
           action: "chapter4",
           result:
-            "Tu réussis à t'enfuir. Heureusement, tu es plus rapide qu'un gorille. Et oui, les gorilles ne savent pas très bien conduire.",
+            "Tu réussis à t'enfuir. Heureusement, tu es plus rapide qu'un gorille. Eh oui, les gorilles ne savent pas très bien conduire.",
         },
       ]);
     } else if (action === "chapter4") {
@@ -115,20 +134,20 @@ function Story() {
           text: "Vous vous battez, mais attention ça glisse.",
           action: "lose",
           result:
-            "vous vous battez férocement et vos êtes sur les point de glisser mais vous rattrapez in extremis mar contre votre lacé ce défait ce qui vous fait tomber au moment où vous refaites un pas. (ah ba ça cépadpo)",
+            "vous vous battez férocement et vos êtes sur les points de glisser mais vous rattrapez in extremis mar contre votre lacé ce défait ce qui vous fait tomber au moment où vous refaites un pas. (ah Ba ça cépadpo)",
         },
         {
           id: "option10",
           text: "Vous lui révélevez vos sentiments et vous espérez qu'il change.",
           action: "chapter6",
           result:
-            "vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonement de l'amour rechauffe vos coeur noir ;)",
+            "vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonnement de l'amour rechauffe vos coeurs noirs ;)",
         },
       ]);
     } else if (action === "chapter6") {
       setChapter("Chapitre 6");
       setMessage(
-        "vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonement de l'amour rechauffe vos coeurs noirs ;)"
+        "vous tombez sous le charme l'un de l'autre et allez vers le soleil couchant tandis que le rayonnement de l'amour rechauffe vos coeurs noirs ;))"
       );
       setResult("c'est gagné");
       setOptions([

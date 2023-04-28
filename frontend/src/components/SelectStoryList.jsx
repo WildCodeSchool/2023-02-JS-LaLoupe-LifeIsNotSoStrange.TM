@@ -32,7 +32,7 @@ export default function SelectStoryList() {
     <div className="lg: flex flex-wrap m-auto">
       {selectStorys.map((selectStory) => (
         <SelectStoryCard
-          key={`storycard-${selectStorys.id}`}
+          key={`storycard-${selectStory.id}`}
           title={selectStory.title}
           image={selectStory.image}
           summary={selectStory.summary}
