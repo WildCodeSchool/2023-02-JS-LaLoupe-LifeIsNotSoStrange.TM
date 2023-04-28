@@ -85,7 +85,6 @@ function App() {
           }
         />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cocktailgame" element={<CocktailGame />} />
         <Route
           path="/game"
           element={
@@ -100,6 +99,7 @@ function App() {
             />
           }
         />
+        <Route path="/cocktailgame" element={<CocktailGame />} />
         <Route path="/selectstory" element={<SelectStoryList />} />
         <Route
           path="/leaderboard"
