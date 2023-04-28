@@ -85,7 +85,6 @@ function App() {
           }
         />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/game" element={<PartyGame />} />
         <Route path="/cocktailgame" element={<CocktailGame />} />
         <Route
           path="/game"
