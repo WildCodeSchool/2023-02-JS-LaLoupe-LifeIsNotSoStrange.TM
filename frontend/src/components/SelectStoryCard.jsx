@@ -19,7 +19,7 @@ export default function SelectStoryCard({ title, image, summary }) {
 
       <Link to="/game">
         <button
-          className="bg-pink-200 font-mono p-1 mt-3 rounded-md px-3 w-[150px] text-black"
+          className="bg-white font-mono p-1 mt-3 rounded-md px-3 w-[150px] text-black m-auto flex justify-center"
           type="button"
         >
           Play
