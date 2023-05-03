@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./Star.css";
 
 const Rating = ({ rating, setRating }) => {
   const handleRating = (value, event) => {
@@ -13,10 +14,7 @@ const Rating = ({ rating, setRating }) => {
       {[1, 2, 3, 4, 5].map((value) => (
         <span
           key={value}
-          style={{
-            cursor: "pointer",
-            color: value <= rating ? "gold" : "gray",
-          }}
+          className={value <= rating ? "gray gold" : "gray"}
           onMouseEnter={() => {
             setRating(value);
           }}
