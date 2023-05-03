@@ -9,7 +9,7 @@ export default function SelectStoryCard({ id, title, image, summary }) {
       <div className="card-container">
       <Link to={id === 2 ? "/cocktailgame" : "/game"}>
         <div className="card-content">
-        </Link>
+        
           <div className="card-title">
             <span className="title">{title}</span>
           </div>
@@ -20,6 +20,7 @@ export default function SelectStoryCard({ id, title, image, summary }) {
             <span className="title">{summary}</span>
           </div>
         </div>
+        </Link>
       </div>
     </section>
 
