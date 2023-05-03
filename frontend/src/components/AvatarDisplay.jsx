@@ -4,8 +4,9 @@ import Avatar from "avataaars";
 
 export default function AvatarDisplay({ avatarParams }) {
   return (
-    <div>
+    <div className="justify-end flex">
       <Avatar
+        className="w-[80px] absolute z-20 mt-2 right-[2%]"
         accessoriesType={avatarParams.accessoriesType}
         avatarStyle={avatarParams.avatarStyle}
         clotheColor={avatarParams.clotheColor}

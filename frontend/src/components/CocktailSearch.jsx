@@ -27,16 +27,23 @@ function CocktailSearch() {
   return (
     <div>
       <form onSubmit={handleSearch}>
-        <label className="text-yellow-400" htmlFor="searchInput">
+        <label
+          className="text-yellow-400 mt-2 mb-2 underline"
+          htmlFor="searchInput"
+        >
           Recherche du cocktail :
         </label>
         <input
+          className="w-10/12 ml-[8%] rounded-md"
           id="searchInput"
           type="text"
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
         />
-        <button className=" text-yellow-400" type="submit">
+        <button
+          className="text-yellow-400 border-2 border-yellow-400 hover:border-white rounded-s w-1/4 ml-[37%] mb-2 mt-2"
+          type="submit"
+        >
           Rechercher
         </button>
       </form>

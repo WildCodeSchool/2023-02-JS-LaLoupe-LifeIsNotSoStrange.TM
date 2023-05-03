@@ -179,7 +179,7 @@ function Story({ endGame }) {
           <button
             type="button"
             key={option.id}
-            className="bg-purple-800 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 text-white font-medium py-2 px-4 rounded-lg h-[60px] mr-[32px]"
+            className="bg-purple-800 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 text-white hover:border-2 hover:border-white font-medium py-2 px-4 rounded-lg h-[60px] mr-[32px]"
             onClick={() => handleOptionClick(option.action)}
           >
             {option.text}
