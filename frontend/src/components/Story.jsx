@@ -28,15 +28,13 @@ function Story({ endGame }) {
           action: "chapter1",
         },
       ]);
-    }
-
-      else if (action === "chapter1") {
+    } else if (action === "chapter1") {
       setChapter("Chapitre 1");
       setMessage(
         "Vous êtes placeholder, un jeune détective privé de Toronto, vous vous noyez dans l'alcool suite à l'échec de votre dernière enquête. Alors que vous travaillez dans votre bureau, vous entendez un bruit de vitre brisée. Que faites-vous ?"
       );
       setOptions([
-        { 
+        {
           id: "option1",
           text: "Vous reprenez un verre et vous vous dîtes, Fichu chat",
           action: "lose",
