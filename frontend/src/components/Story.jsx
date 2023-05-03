@@ -16,38 +16,27 @@ function Story({ endGame }) {
     },
   ]);
 
-  // Fonction pour réinitialiser le jeu au chapitre 1
-  /*
-  const restartGame = () => {
-    setChapter("WELCOME !!!");
-    setMessage(
-      "La nuit tombée sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activités criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencé."
-    );
-    setResult();
-    setOptions([
-      {
-        id: "option1",
-        text: "Commencer l'histoire",
-        action: "chapter1",
-        result: "",
-      },
-    ]);
-  };
-  */
-
   const handleOptionClick = (action) => {
     if (action === "lose") {
       setMessage();
-      setOptions([]);
       const lostOption = options.find((option) => option.action === "lose");
       setResult(lostOption.result);
-    } else if (action === "chapter1") {
+      setOptions([
+        {
+          id: "option6",
+          text: "Recommencez au chapitre 1",
+          action: "chapter1",
+        },
+      ]);
+    }
+
+      else if (action === "chapter1") {
       setChapter("Chapitre 1");
       setMessage(
         "Vous êtes placeholder, un jeune détective privé de Toronto, vous vous noyez dans l'alcool suite à l'échec de votre dernière enquête. Alors que vous travaillez dans votre bureau, vous entendez un bruit de vitre brisée. Que faites-vous ?"
       );
       setOptions([
-        {
+        { 
           id: "option1",
           text: "Vous reprenez un verre et vous vous dîtes, Fichu chat",
           action: "lose",
@@ -66,7 +55,7 @@ function Story({ endGame }) {
       setMessage(
         "Vous vous rapprochez de la fenêtre et distinguez une silhouette ressemblant au suspect principal de votre précédente enquête (c'était un échec). Vous prenez votre chapeau de détective et courrez dans la rue pour interpeller le suspect. Vous arrivez dans la rue et voyez le suspect partir dans une ruelle, vous décidez de le suivre, mais un homme vous assomme. Vous vous réveillez dans une pièce. Votre seul moyen de s'échapper est de trouver le code qui ouvre la porte. Que faites-vous ?"
       );
-      setResult("oui");
+      setResult("");
       setOptions([
         {
           id: "option3",
