@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./Contact.css";
+import Rating from "./Star";
 
-export default function FormWithMultipleState() {
+function FormWithMultipleState() {
   const [pseudo, setPseudo] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -9,6 +10,7 @@ export default function FormWithMultipleState() {
   const [errorPseudo, setErrorPseudo] = useState(false);
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
+  const [rating, setRating] = useState(0);
 
   const handleChangePseudo = (e) => {
     setPseudo(e.target.value);
@@ -79,15 +81,17 @@ export default function FormWithMultipleState() {
           />
           {errorMessage && <p className="size">Message is required</p>}
         </label>
+        <Rating rating={rating} setRating={setRating} />
         <button id="contactbutton" type="submit">
           Send Message
         </button>
       </form>
       {isSubmit && (
         <p>
-          This is the message from {pseudo}: {message}
+          This is the message from {pseudo}: {message} and the {rating}★
         </p>
       )}
     </>
   );
 }
+export default FormWithMultipleState;
