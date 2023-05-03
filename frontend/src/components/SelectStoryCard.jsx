@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
 
-export default function SelectStoryCard({ title, image, summary }) {
+export default function SelectStoryCard({ id, title, image, summary }) {
   return (
     <div className="bg-gray-600 grid p-8 items-center rounded-lg max-w-xs justify-center m-8">
       <h4 className=" border-2 rounded-md font-mono font-extrabold text-center text-xs text-white">
@@ -17,7 +17,7 @@ export default function SelectStoryCard({ title, image, summary }) {
         {summary}
       </p>
 
-      <Link to="/game">
+      <Link to={id === 2 ? "/cocktailgame" : "/game"}>
         <button
           className="bg-white font-mono p-1 mt-3 rounded-md px-3 w-[150px] text-black m-auto flex justify-center"
           type="button"
@@ -30,6 +30,7 @@ export default function SelectStoryCard({ title, image, summary }) {
 }
 
 SelectStoryCard.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,

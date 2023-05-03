@@ -33,6 +33,7 @@ export default function SelectStoryList() {
       {selectStorys.map((selectStory) => (
         <SelectStoryCard
           key={`storycard-${selectStory.id}`}
+          id={selectStory.id}
           title={selectStory.title}
           image={selectStory.image}
           summary={selectStory.summary}
