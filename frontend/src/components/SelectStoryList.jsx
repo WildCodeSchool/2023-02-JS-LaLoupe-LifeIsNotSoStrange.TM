@@ -4,32 +4,31 @@ const selectStorys = [
   {
     id: 1,
     title: "Toronto by night",
-    summary: "A dark adventure on the streets of Toronto city.",
+    summary: "Une sombre aventure dans les rues de Toronto.",
     image: "./src/assets/detective_city.jpg",
   },
   {
     id: 2,
     title: "Cocktail rush !",
-    summary: "Will you survive this rush?",
+    summary: "les commandes s'enchaînent et se déchainent !",
     image: "./src/assets/cocktail-au-comptoir.jpg",
   },
   {
     id: 3,
-    title: "Where is Aqua ?",
-    summary: "Aqua is a very special color...",
+    title: "Où est l'aqua ?",
+    summary: "Aqua est une couleur spéciale...",
     image: "./src/assets/texture-aqua.jpg",
   },
   {
     id: 4,
-    title: "Xavier and the little canibal unicorns ponies.",
-    summary:
-      "the question that we can ask ourselves and why xavier said: 'oh no not yet!'",
+    title: "Xavier et les licornes cannibales.",
+    summary: " Xavier a dit: 'oh non pas encore !'",
     image: "./src/assets/little-ponie.jpg",
   },
 ];
 export default function SelectStoryList() {
   return (
-    <div className="lg: flex flex-wrap m-auto justify-center">
+    <div className="theContainer">
       {selectStorys.map((selectStory) => (
         <SelectStoryCard
           key={`storycard-${selectStory.id}`}
