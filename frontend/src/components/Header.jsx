@@ -10,9 +10,7 @@ function Header() {
         src="src/assets/logop2.png"
         alt="Logo du site"
       />
-      <h1 className="gameTitle rainbow m-auto md:text-left">
-        Life is not so strange
-      </h1>
+      <h1 className="gameTitle m-auto">Life is not so strange</h1>
       <NavBar />
     </header>
   );

@@ -116,9 +116,9 @@ function App() {
   const [avatarParams, setAvatarParams] = useState({
     avatarStyle: "Transparent",
     accessoriesType: "Round",
-    topType: "LongHairBob",
+    topType: "ShortHairDreads01",
     clotheColor: "Blue02",
-    clotheType: "ShirtCrewNeck",
+    clotheType: "BlazerSweater",
     eyeType: "Surprised",
     eyebrowType: "SadConcernedNatural",
     facialHairColor: "Black",
@@ -136,7 +136,10 @@ function App() {
     /* Verifier que le joueur qui a fini la partie n'a pas deja un classement , si il est dedans verifier si le temps restant est meilleur que l'ancien si il l'est modfier ou non si le resultatt est meilleur et le modifier en conséquence si le jouer n l'est pas ajouter les informations dans le classement ! */
   };
   return (
-    <div className="min-h-screen relative pb-[60px]">
+    <div className="min-h-screen relative">
+      <div className="wave" />
+      <div className="wave" />
+      <div className="wave" />
       <Header />
 
       <Routes>

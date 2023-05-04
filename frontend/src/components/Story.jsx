@@ -1,11 +1,13 @@
+import "./Story.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function Story({ endGame }) {
+function Story({ endGame, setPosition }) {
   const [chapter, setChapter] = useState("WELCOME !!!");
   const [message, setMessage] = useState(
     "La nuit tombe sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activitées criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencer"
   );
+
   const [result, setResult] = useState();
   const [options, setOptions] = useState([
     {
@@ -16,31 +18,19 @@ function Story({ endGame }) {
     },
   ]);
 
-  // Fonction pour réinitialiser le jeu au chapitre 1
-  /*
-  const restartGame = () => {
-    setChapter("WELCOME !!!");
-    setMessage(
-      "La nuit tombée sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activités criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencé."
-    );
-    setResult();
-    setOptions([
-      {
-        id: "option1",
-        text: "Commencer l'histoire",
-        action: "chapter1",
-        result: "",
-      },
-    ]);
-  };
-  */
-
   const handleOptionClick = (action) => {
     if (action === "lose") {
       setMessage();
-      setOptions([]);
       const lostOption = options.find((option) => option.action === "lose");
       setResult(lostOption.result);
+      setPosition([51.5, -0.1]);
+      setOptions([
+        {
+          id: "option6",
+          text: "Recommencez au chapitre 1",
+          action: "chapter1",
+        },
+      ]);
     } else if (action === "chapter1") {
       setChapter("Chapitre 1");
       setMessage(
@@ -66,7 +56,8 @@ function Story({ endGame }) {
       setMessage(
         "Vous vous rapprochez de la fenêtre et distinguez une silhouette ressemblant au suspect principal de votre précédente enquête (c'était un échec). Vous prenez votre chapeau de détective et courrez dans la rue pour interpeller le suspect. Vous arrivez dans la rue et voyez le suspect partir dans une ruelle, vous décidez de le suivre, mais un homme vous assomme. Vous vous réveillez dans une pièce. Votre seul moyen de s'échapper est de trouver le code qui ouvre la porte. Que faites-vous ?"
       );
-      setResult("oui");
+      setPosition([31.5, -0.1]);
+      setResult("");
       setOptions([
         {
           id: "option3",
@@ -86,6 +77,7 @@ function Story({ endGame }) {
       setMessage(
         "Vous reussissez a trouver le bon code et ouvrez la porte quand au moment de sortir, vous appercevez deux Gorilles arrivent en voiture. Ils vous dévisagent d'un air ahurie en vous voyant sortir des locaux. Que faites-vous ?"
       );
+      setPosition([81.5, -0.1]);
       setResult("");
       setOptions([
         {
@@ -108,6 +100,7 @@ function Story({ endGame }) {
       setMessage(
         "Vous réussissez à vous enfuir. Heureusement, tu es plus rapide qu'un gorille. Eh oui, les gorilles ne savent pas très bien conduire. Tu te retournes pour t'assurer que tu les as bien semé et tu reçois un appel de ton ancien partenaire de police: Xavier, ça fait un bail que tu n'avais plus de nouvelle de lui. Que fais-tu ?"
       );
+      setPosition([11.5, -0.1]);
 
       setOptions([
         {
@@ -129,6 +122,7 @@ function Story({ endGame }) {
       setMessage(
         "Vous avez reussi a trouvez les coordonées corespondante aux chutes du Niagara et en y allant votre épreuve finale vous y attend de pied ferme: AH AH ! C'est moi qui suis le suspect! dit Quentin de Vancouver, le pablo escobar canadien."
       );
+      setPosition([51.5, -0.1]);
       setResult("");
       setOptions([
         {
@@ -171,7 +165,7 @@ function Story({ endGame }) {
   };
 
   return (
-    <div className="bg-gray-800 rounded-lg shadow-lg p-6 w-[80%] ml-auto mr-auto">
+    <div className="choicesDisplay rounded-lg shadow-lg p-6 w-[80%] ml-auto mr-auto">
       <h1 className="text-3xl font-bold text-white mb-4">{chapter}</h1>
       <p className="text-lg text-gray-300 mb-8">{message}</p>
       <div className="space-y-4">
@@ -179,7 +173,7 @@ function Story({ endGame }) {
           <button
             type="button"
             key={option.id}
-            className="bg-purple-800 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 text-white hover:border-2 hover:border-white font-medium py-2 px-4 rounded-lg h-[60px] mr-[32px]"
+            className=" text-white border-2 border-white font-medium pt-2 px-4 rounded-lg h-[60px] mr-[32px]"
             onClick={() => handleOptionClick(option.action)}
           >
             {option.text}
@@ -193,6 +187,7 @@ function Story({ endGame }) {
 
 Story.propTypes = {
   endGame: PropTypes.func.isRequired,
+  setPosition: PropTypes.func.isRequired,
 };
 
 export default Story;
