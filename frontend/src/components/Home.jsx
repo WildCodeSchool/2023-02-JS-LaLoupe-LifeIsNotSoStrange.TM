@@ -4,7 +4,7 @@ import Intro from "./Intro";
 
 function Home({ avatarParams, setAvatarParams }) {
   return (
-    <div className="min-h-screen flex flex-col justify-between items-center">
+    <div className=" flex flex-col justify-between items-center">
       <Intro />
       <AvatarSelect
         avatarParams={avatarParams}

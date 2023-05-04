@@ -14,7 +14,7 @@ export default function PartyGame({
   return (
     <div>
       <AvatarDisplay avatarParams={avatarParams} />
-      <p className="right-[2%] top-[22%] z-20 absolute text-xl">
+      <p className="right-[2.3%] top-[22%] z-20 absolute text-xl">
         {avatarParams.pseudo}
       </p>
       <Timer
