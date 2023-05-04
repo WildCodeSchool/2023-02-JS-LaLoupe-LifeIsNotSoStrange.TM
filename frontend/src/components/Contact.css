@@ -56,14 +56,13 @@ p {
   margin: 0;
   padding: 0;
 }
-
 .containered {
   font-style: italic;
   font-weight: bold;
   display: flex;
   margin: auto;
-  margin-top: 16px;
-  aspect-ratio: 16/9;
+  margin-top: 64px;
+  /* aspect-ratio: 16/9; */
   align-items: center;
   justify-items: center;
   justify-content: center;
