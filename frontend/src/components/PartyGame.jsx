@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import PropTypes from "prop-types";
 import Timer from "./Timer";
 import Screen from "./Screen";
@@ -11,6 +13,8 @@ export default function PartyGame({
   setTimer,
   endGame,
 }) {
+  const [position, setPosition] = useState([43.7, -79.41]); // initial position: Toronto
+
   return (
     <div>
       <AvatarDisplay avatarParams={avatarParams} />
@@ -20,8 +24,8 @@ export default function PartyGame({
         setTempsRestant={setTempsRestant}
         setTimer={setTimer}
       />
-      <Screen />
-      <Story endGame={endGame} />
+      <Screen position={position} />
+      <Story setPosition={setPosition} endGame={endGame} />
     </div>
   );
 }
