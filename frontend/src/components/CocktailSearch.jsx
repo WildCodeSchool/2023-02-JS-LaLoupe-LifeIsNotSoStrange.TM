@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Quizz.css";
 
 function CocktailSearch() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,42 +26,36 @@ function CocktailSearch() {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSearch}>
-        <label
-          className="text-yellow-400 mt-2 mb-2 underline"
-          htmlFor="searchInput"
-        >
+    <div className="search-cocktail-container">
+      <form
+        className=" content-center items-center gap-3 bg-gradient-to-tr to-blue-400 from-green-500 p-4 flex-wrap  m-5 rounded-md"
+        onSubmit={handleSearch}
+      >
+        <label className="label-search" htmlFor="searchInput">
           Recherche du cocktail :
         </label>
         <input
-          className="w-10/12 ml-[8%] rounded-md"
+          className="cocktail-input"
           id="searchInput"
           type="text"
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
         />
-        <button
-          className="text-yellow-400 border-2 border-yellow-400 hover:border-white rounded-s w-1/4 ml-[37%] mb-2 mt-2"
-          type="submit"
-        >
+        <button className="btn" type="submit">
           Rechercher
         </button>
       </form>
 
-      <div className="m-8 ">
+      <div className=" m-8  ">
         {results.map((drink) => (
           <div
-            className="flex-wrap m-5 justify-center items-center  bg-slate-500 "
+            className=" font-bold flex-wrap
+          sp bg-gradient-to-tr to-blue-400 from-green-500 p-4 align-middle m-5 rounded-md "
             key={drink.idDrink}
           >
-            <h2 className="text-white">{drink.strDrink}</h2>
-            <img
-              className="m-2 w-1/6 p-2"
-              src={drink.strDrinkThumb}
-              alt={drink.strDrink}
-            />
-            <p>
+            <h2 className="text-white text-center">{drink.strDrink}</h2>
+            <img className="" src={drink.strDrinkThumb} alt={drink.strDrink} />
+            <p className="text-center">
               Its ingredients are : {drink.strIngredient1},{" "}
               {drink.strIngredient2}, {drink.strIngredient3},{" "}
               {drink.strIngredient4}

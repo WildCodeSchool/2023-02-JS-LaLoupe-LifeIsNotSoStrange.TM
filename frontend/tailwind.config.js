@@ -23,7 +23,7 @@ export default {
         },
       },
       animation: {
-        typing: "typing 1s steps(20) alternate",
+        typing: "typing 1.2s steps(20) alternate",
       },
     },
   },

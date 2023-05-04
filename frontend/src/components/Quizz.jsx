@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Quizz.css";
 
 const Quizz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -72,16 +73,16 @@ const Quizz = () => {
   }
 
   return (
-    <div className="font-bold m-4 rounded-md flex-col bg-gradient-to-tr to-blue-400 from-green-500 p-10">
-      <h1>Commande {currentQuestion + 1}</h1>
-      <p className="  m-auto animate-typing whitespace-normal overflow-hidden border-r-2 border-r-white pr-5 text-white font-bold">
+    <div className=" font-bold m-10 rounded-md flex-col bg-gradient-to-tr to-blue-400 from-green-500 p-4">
+      <h1 className="p-2">Commande </h1>
+      <p className="p-2 animate-typing border-r-2 tracking-widest border-r-white pr-5 text-black font-extrabold">
         {questions[currentQuestion].question}
       </p>
       <ul>
         {questions[currentQuestion].options.map((option) => (
-          <li className="" key={option.id}>
+          <li className="p-3" key={option.id}>
             <button
-              className="my-4  text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              className="btn "
               type="button"
               onClick={() => handleAnswer(option)}
             >
