@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Quizz.css";
 
 const Quizz = () => {
@@ -10,7 +10,7 @@ const Quizz = () => {
       question:
         "Hey salut! Tu es le nouveau que Billy a embauché c'est ça? Bon écoute, je n'ai pas le temps de t'expliquer le boulot. On va être en plein rush et notre clientèle n'aime pas attendre ! Ne te plante pas dans les commandes! Si tu as un bon chiffre à la fin du service, peut-être que tu seras l'employé de l'année, un truc dans le genre. Je te laisse avec la carte des cocktails, ça peut toujours servir. Par contre elle ne comprend que l'anglais, ouais je sais c'est pas ouf.",
       options: ["Moi je venais pour les wc", "Ok", "C'est pas ouf"],
-      correctAnswer: "ok",
+      correctAnswer: "Ok",
     },
     {
       id: 2,
@@ -51,6 +51,9 @@ const Quizz = () => {
       correctAnswer: "Martini",
     },
   ];
+  useEffect(() => {
+    document.activeElement?.blur();
+  }, [answers]);
 
   const handleAnswer = (answer) => {
     setAnswers({ ...answers, [currentQuestion]: answer });
@@ -75,7 +78,7 @@ const Quizz = () => {
   return (
     <div className=" font-bold m-10 rounded-md flex-col bg-gradient-to-tr to-blue-400 from-green-500 p-4">
       <h1 className="p-2">Commande </h1>
-      <p className="p-2 animate-typing border-r-2 tracking-widest border-r-white pr-5 text-black font-extrabold">
+      <p className="p-2 animate-typing border-r-2 whitespace-nowrap tracking-widest border-r-white pr-5 text-black font-extrabold">
         {questions[currentQuestion].question}
       </p>
       <ul>

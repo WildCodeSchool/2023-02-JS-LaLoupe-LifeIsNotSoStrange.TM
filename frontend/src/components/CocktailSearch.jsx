@@ -28,7 +28,7 @@ function CocktailSearch() {
   return (
     <div className="search-cocktail-container">
       <form
-        className=" content-center items-center gap-3 bg-gradient-to-tr to-blue-400 from-green-500 p-4 flex-wrap  m-5 rounded-md"
+        className=" bg-gradient-to-tr to-blue-400 from-green-500 flex flex-col gap-4 p-4 rounded-md"
         onSubmit={handleSearch}
       >
         <label className="label-search" htmlFor="searchInput">
@@ -46,15 +46,20 @@ function CocktailSearch() {
         </button>
       </form>
 
-      <div className=" m-8  ">
+      <div className=" m-8 flex-wrap items-center ">
         {results.map((drink) => (
           <div
-            className=" font-bold flex-wrap
+            className=" font-bold  flex flex-col
+          justify-center items-center
           sp bg-gradient-to-tr to-blue-400 from-green-500 p-4 align-middle m-5 rounded-md "
             key={drink.idDrink}
           >
             <h2 className="text-white text-center">{drink.strDrink}</h2>
-            <img className="" src={drink.strDrinkThumb} alt={drink.strDrink} />
+            <img
+              className=" p-2 w-1/2 "
+              src={drink.strDrinkThumb}
+              alt={drink.strDrink}
+            />
             <p className="text-center">
               Its ingredients are : {drink.strIngredient1},{" "}
               {drink.strIngredient2}, {drink.strIngredient3},{" "}
