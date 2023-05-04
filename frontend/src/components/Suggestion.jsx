@@ -18,7 +18,7 @@ const CommentBox = () => {
 
   return (
     <form className="containered min-h-auto" onSubmit={handleSubmit}>
-      <div className="input-container">
+      <div className="input-container mb-20">
         <div className="input-content">
           <div className="input-dist">
             <div className="input-type">
