@@ -1,5 +1,17 @@
 import "./Leaderboard.css";
 import PropTypes from "prop-types";
+import Avatar from "avataaars";
+
+function secondsToMinutesAndSeconds(time) {
+  const minutes = Math.floor(time / 60);
+  const secondes = time % 60;
+  return (
+    <>
+      {minutes > 1 ? ` ${minutes} min` : " 00 min"}
+      {secondes > 1 ? ` ${secondes} sec` : " 00 sec"}
+    </>
+  );
+}
 
 function Leaderboard({ players }) {
   return (
@@ -17,9 +29,11 @@ function Leaderboard({ players }) {
           {players.map((player) => (
             <tr key={`player-${player.id}`}>
               <td>{player.pseudo}</td>
-              <td>{player.avatar}</td>
+              <td>
+                <Avatar {...player.avatar} className="w-[80px]" />
+              </td>
               <td>{player.position}</td>
-              <td>{player.timer}</td>
+              <td>{secondsToMinutesAndSeconds(player.timer)}</td>
             </tr>
           ))}
         </tbody>
