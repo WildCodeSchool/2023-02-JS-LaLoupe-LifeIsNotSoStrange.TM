@@ -15,29 +15,38 @@ function secondsToMinutesAndSeconds(time) {
 
 function Leaderboard({ players }) {
   return (
-    <div className="tableau">
-      <table>
-        <thead>
-          <tr>
-            <th>Pseudo</th>
-            <th>Avatar</th>
-            <th>Classement</th>
-            <th>Timer</th>
-          </tr>
-        </thead>
-        <tbody>
-          {players.map((player) => (
-            <tr key={`player-${player.id}`}>
-              <td>{player.pseudo}</td>
-              <td>
-                <Avatar {...player.avatar} className="w-[80px]" />
-              </td>
-              <td>{player.position}</td>
-              <td>{secondsToMinutesAndSeconds(player.timer)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="input-container max-w-[100vw] max-h-[100vh] mb-20">
+      <div className="input-content">
+        <div className="input-dist">
+          <div className="input-type">
+            <table>
+              <thead>
+                <tr>
+                  <th>Pseudo</th>
+                  <th>Avatar</th>
+                  <th>Classement</th>
+                  <th>Timer</th>
+                </tr>
+              </thead>
+              <tbody>
+                {players.map((player) => (
+                  <tr key={`player-${player.id}`}>
+                    <td>{player.pseudo}</td>
+                    <td>
+                      <Avatar
+                        {...player.avatar}
+                        className="w-[60px] md:w-[90px]"
+                      />
+                    </td>
+                    <td>{player.position}</td>
+                    <td>{secondsToMinutesAndSeconds(player.timer)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@
     both;
   animation: tracking-in-expand 1.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   color: white;
-  padding-left: 15%;
+  padding-left: 17%;
 }
 @-webkit-keyframes tracking-in-expand {
   0% {
