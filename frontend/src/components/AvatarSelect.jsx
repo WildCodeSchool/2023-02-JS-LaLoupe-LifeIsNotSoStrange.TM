@@ -67,6 +67,7 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
             <option value="ShortHairShortFlat">Cheveux courts</option>
             <option value="Hijab">Hijab</option>
             <option value="Eyepatch">Jack Sparrow</option>
+            <option value="LongHairStraight">Cheveux Long</option>
           </select>
         </label>
         <label className="text-white">
@@ -82,6 +83,7 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
             <option value="Blonde">Blond</option>
             <option value="Brown">Marron</option>
             <option value="SilverGray">Gris</option>
+            <option value="Auburn">Roux</option>
           </select>
         </label>
         <label className="text-white">
