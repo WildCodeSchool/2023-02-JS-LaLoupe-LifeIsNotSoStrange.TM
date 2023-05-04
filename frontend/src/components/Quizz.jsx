@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+
+import TypeWriterEffect from "react-typewriter-effect";
+
 import "./Quizz.css";
 
 const Quizz = () => {
@@ -59,6 +62,12 @@ const Quizz = () => {
     setAnswers({ ...answers, [currentQuestion]: answer });
     setCurrentQuestion(currentQuestion + 1);
   };
+  // const handleAnswer = (answer) => {
+  //   setAnswers({ ...answers, [currentQuestion]: answer });
+  //   if (currentQuestion < questions.length - 1) {
+  //     setCurrentQuestion(currentQuestion + 1);
+  //   }
+  // };
 
   const score = Object.values(answers).reduce((acc, answer, index) => {
     return answer === questions[index].correctAnswer ? acc + 1 : acc;
@@ -78,8 +87,18 @@ const Quizz = () => {
   return (
     <div className=" font-bold m-10 rounded-md flex-col bg-gradient-to-tr to-blue-400 from-green-500 p-4">
       <h1 className="p-2">Commande </h1>
-      <p className="p-2 animate-typing border-r-2 whitespace-nowrap tracking-widest border-r-white pr-5 text-black font-extrabold">
+      {/* <p className="p-2 animate-typing border-r-2 whitespace-nowrap tracking-widest border-r-white pr-5 text-black font-extrabold">
         {questions[currentQuestion].question}
+      </p> */}
+      <p>
+        <TypeWriterEffect
+          className="p-2  border-r-white pr-5 text-black font-extrabold"
+          textStyle={{ fontFamily: "Red Hat Display" }}
+          startDelay={100}
+          cursorColor="black"
+          text={questions[currentQuestion].question}
+          typeSpeed={40}
+        />
       </p>
       <ul>
         {questions[currentQuestion].options.map((option) => (

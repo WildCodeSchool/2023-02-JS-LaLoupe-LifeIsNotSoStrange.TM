@@ -28,7 +28,7 @@ function CocktailSearch() {
   return (
     <div className="search-cocktail-container">
       <form
-        className=" bg-gradient-to-tr to-blue-400 from-green-500 flex flex-col gap-4 p-4 rounded-md"
+        className=" bg-gradient-to-tr to-blue-400 from-green-500 flex flex-col justify-center items-center gap-4 p-4 rounded-md"
         onSubmit={handleSearch}
       >
         <label className="label-search" htmlFor="searchInput">
@@ -46,10 +46,10 @@ function CocktailSearch() {
         </button>
       </form>
 
-      <div className=" m-8 flex-wrap items-center ">
+      <div className="">
         {results.map((drink) => (
           <div
-            className=" font-bold  flex flex-col
+            className=" font-bold flex flex-col
           justify-center items-center
           sp bg-gradient-to-tr to-blue-400 from-green-500 p-4 align-middle m-5 rounded-md "
             key={drink.idDrink}
