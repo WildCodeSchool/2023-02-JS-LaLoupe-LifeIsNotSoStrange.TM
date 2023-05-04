@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Avatar from "avataaars";
+import "./AvatarSelect.css";
 
 export default function AvatarSelect({ avatarParams, setAvatarParams }) {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
 
   return (
     <div>
-      <div className="flex justify-center mt-3 bg-gray-800 rounded-md">
+      <div className="flex justify-center sm:object-scale-down">
         <Avatar
           accessoriesType={avatarParams.accessoriesType}
           avatarStyle={avatarParams.avatarStyle}
@@ -38,11 +39,11 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
           pseudo={avatarParams.pseudo}
         />
       </div>
-      <div className="grid justify-center gap-5 bg-gray-800 rounded-md w-[360px]">
-        <label className="text-white mt-2">
+      <div className="avatarCreator grid justify-center gap-5 text-l  mb-3 max-[768px]:text-xs">
+        <label className="text-white m-auto">
           Accessoires :
           <select
-            className="text-black rounded-md ml-2"
+            className="text-black rounded-md ml-2 cursor-pointer"
             value={avatarParams.accessoriesType}
             onChange={(e) =>
               handleAvatarParamsChange("accessoriesType", e.target.value)
@@ -57,7 +58,7 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
         <label className="text-white">
           Cheveux :
           <select
-            className="text-black rounded-md ml-2"
+            className="text-black rounded-md ml-2 cursor-pointer"
             value={avatarParams.topType}
             onChange={(e) =>
               handleAvatarParamsChange("topType", e.target.value)
@@ -72,7 +73,7 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
         <label className="text-white">
           Couleur de cheveux :
           <select
-            className="text-black rounded-md ml-2"
+            className="text-black rounded-md ml-2 cursor-pointer"
             value={avatarParams.hairColor}
             onChange={(e) =>
               handleAvatarParamsChange("hairColor", e.target.value)
@@ -87,7 +88,7 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
         <label className="text-white">
           Type de barbe :
           <select
-            className="text-black rounded-md ml-2"
+            className="text-black rounded-md ml-2 cursor-pointer"
             value={avatarParams.facialHairType}
             onChange={(e) =>
               handleAvatarParamsChange("facialHairType", e.target.value)
@@ -101,7 +102,7 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
         <label className="text-white">
           Couleur de la barbe :
           <select
-            className="text-black rounded-md ml-2"
+            className="text-black rounded-md ml-2 cursor-pointer"
             value={avatarParams.facialHairColor}
             onChange={(e) =>
               handleAvatarParamsChange("facialHairColor", e.target.value)
@@ -116,7 +117,7 @@ export default function AvatarSelect({ avatarParams, setAvatarParams }) {
         <label className="text-white">
           Vêtements :
           <select
-            className="text-black rounded-md ml-2"
+            className="text-black rounded-md ml-2 cursor-pointer"
             value={avatarParams.clotheType}
             onChange={(e) =>
               handleAvatarParamsChange("clotheType", e.target.value)

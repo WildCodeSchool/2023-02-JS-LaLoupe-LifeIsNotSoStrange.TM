@@ -1,5 +1,5 @@
 li:hover {
-  @apply bg-gradient-to-r from-indigo-500;
+  @apply bg-gradient-to-r from-fuchsia-900 via-fuchsia-800 to-fuchsia-700;
 }
 
 ul {
