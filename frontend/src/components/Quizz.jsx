@@ -8,13 +8,13 @@ const Quizz = () => {
       id: 1,
       question:
         "Hey salut! Tu es le nouveau que Billy a embauché c'est ça? Bon écoute, je n'ai pas le temps de t'expliquer le boulot. On va être en plein rush et notre clientèle n'aime pas attendre ! Ne te plante pas dans les commandes! Si tu as un bon chiffre à la fin du service, peut-être que tu seras l'employé de l'année, un truc dans le genre. Je te laisse avec la carte des cocktails, ça peut toujours servir. Par contre elle ne comprend que l'anglais, ouais je sais c'est pas ouf.",
-      options: ["moi je venais pour les wc", "ok", "c'est pas ouf"],
+      options: ["Moi je venais pour les wc", "Ok", "C'est pas ouf"],
       correctAnswer: "ok",
     },
     {
       id: 2,
       question:
-        "Salut! moi c'est Fizz. Tu me mets la même chose que d'habitude! Mais si, le truc avec du powdered sugar! Allez avec ça je me sens comme Napoléon.",
+        "Salut! Moi c'est Fizz. Tu me mets la même chose que d'habitude! Mais si, le truc avec du powdered sugar! Allez avec ça je me sens comme Napoléon.",
       options: [
         "Japanese Fizz",
         "Amaretto Fizz",

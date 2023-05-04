@@ -1,55 +1,46 @@
-.rainbow {
-  animation: rainbow 3.5s linear;
-  animation-iteration-count: infinite;
-}
-@keyframes rainbow {
-  100%,
-  0% {
-    color: rgb(255, 0, 0);
-  }
-  8% {
-    color: rgb(255, 127, 0);
-  }
-  16% {
-    color: rgb(255, 255, 0);
-  }
-  25% {
-    color: rgb(127, 255, 0);
-  }
-  33% {
-    color: rgb(0, 255, 0);
-  }
-  41% {
-    color: rgb(0, 255, 127);
-  }
-  50% {
-    color: rgb(0, 255, 255);
-  }
-  58% {
-    color: rgb(0, 127, 255);
-  }
-  66% {
-    color: rgb(0, 0, 255);
-  }
-  75% {
-    color: rgb(127, 0, 255);
-  }
-  83% {
-    color: rgb(255, 0, 255);
-  }
-  91% {
-    color: rgb(255, 0, 127);
-  }
-}
-
 .gameTitle {
   @apply text-3xl font-medium text-white;
   text-shadow: 2px 4px 9px rgba(0, 0, 0, 0.66);
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: tracking-in-expand 1.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  color: white;
+  padding-left: 15%;
+}
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 970px) {
   .gameTitle {
-    @apply text-xl;
     margin-top: 10px;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .gameTitle {
+    padding-left: 0;
   }
 }
