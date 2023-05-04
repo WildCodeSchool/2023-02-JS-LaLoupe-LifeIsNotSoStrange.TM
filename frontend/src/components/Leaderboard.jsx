@@ -4,26 +4,34 @@ import PropTypes from "prop-types";
 function Leaderboard({ players }) {
   return (
     <div className="tableau">
-      <table>
-        <thead>
-          <tr>
-            <th>Pseudo</th>
-            <th>Avatar</th>
-            <th>Classement</th>
-            <th>Timer</th>
-          </tr>
-        </thead>
-        <tbody>
-          {players.map((player) => (
-            <tr key={`player-${player.id}`}>
-              <td>{player.pseudo}</td>
-              <td>{player.avatar}</td>
-              <td>{player.position}</td>
-              <td>{player.timer}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="input-container">
+        <div className="input-content">
+          <div className="input-dist">
+            <div className="input-type">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Pseudo</th>
+                    <th>Avatar</th>
+                    <th>Classement</th>
+                    <th>Timer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {players.map((player) => (
+                    <tr key={`player-${player.id}`}>
+                      <td>{player.pseudo}</td>
+                      <td>{player.avatar}</td>
+                      <td>{player.position}</td>
+                      <td>{player.timer}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

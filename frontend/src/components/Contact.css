@@ -56,19 +56,13 @@ p {
   margin: 0;
   padding: 0;
 }
-/*The eye icon on the password can be stylize with any tool you want
-to use (the only way i know to do this correctly is using JS)
-this is meant to be wide supported and it really depends on you browsers
-if i realize any way to stylize the eye it could be added in the future
-in other input type*/
-
 .containered {
   font-style: italic;
   font-weight: bold;
   display: flex;
   margin: auto;
   margin-top: 64px;
-  aspect-ratio: 16/9;
+  /* aspect-ratio: 16/9; */
   align-items: center;
   justify-items: center;
   justify-content: center;
