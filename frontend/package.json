@@ -15,7 +15,6 @@
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.10.0",
     "react-typewriter-effect": "^1.1.0"
-    "react-responsive-carousel": "^3.2.23",
 
   },
   "devDependencies": {
