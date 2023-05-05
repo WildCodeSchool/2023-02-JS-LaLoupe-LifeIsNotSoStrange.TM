@@ -61,7 +61,7 @@ p {
   font-weight: bold;
   display: flex;
   margin: auto;
-  margin-top: 64px;
+  margin-top: 10px;
   /* aspect-ratio: 16/9; */
   align-items: center;
   justify-items: center;
@@ -71,7 +71,7 @@ p {
   gap: 1em;
 }
 
-.input-container {
+.input-container2 {
   filter: drop-shadow(46px 36px 24px #4090b5)
     drop-shadow(-55px -40px 25px #9e30a9);
   animation: blinkShadowsFilter 8s ease-in infinite;

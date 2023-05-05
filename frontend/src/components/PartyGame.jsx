@@ -17,9 +17,7 @@ export default function PartyGame({
   return (
     <div className="flex flex-col items-center">
       <AvatarDisplay avatarParams={avatarParams} />
-      <p className="absolute top-[22%] right-[2.3%] z-20 text-xl">
-        {avatarParams.pseudo}
-      </p>
+      <p className="right-[2.3%] top-[22%] z-20 absolute text-xl" />
       <Timer
         tempsRestant={tempsRestant}
         setTempsRestant={setTempsRestant}

@@ -1,13 +1,3 @@
-/* div.tableau {
-  border-radius: 25px;
-  background-color: rgba(27, 36, 49, 0.933);
-  border: 1px solid black;
-  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.596);
-  width: 90%;
-  height: 450px;
-  margin-left: auto;
-  margin-right: auto;
-} */
 tr {
   display: flex;
   width: 70%;
@@ -45,6 +35,9 @@ table {
   margin-bottom: 6px;
 }
 .input-container {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
   width: 97%;
   margin-top: 15%;
   margin-left: auto;
@@ -153,6 +146,7 @@ table {
   padding-inline: 1em;
   padding-block: 1.2em;
   grid-template-columns: 1fr;
+  margin-top: 10%;
 }
 
 .input-type {
@@ -277,8 +271,7 @@ table {
     font-size: 1.5rem;
   }
   div.tableau {
-    margin-top: 2%;
-    height: 700px;
+    height: 100%;
   }
   th {
     margin-left: 14%;
@@ -291,21 +284,18 @@ table {
   }
   .input-container {
     width: 90%;
-    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     filter: drop-shadow(46px 36px 24px #4090b5)
       drop-shadow(-55px -40px 25px #9e30a9);
     animation: blinkShadowsFilter 8s ease-in infinite;
+    margin-top: 64px;
   }
   .input-content {
-    margin-top: 0;
     display: grid;
-    align-content: center;
     justify-items: center;
     align-items: center;
     text-align: center;
-    padding-inline: 1em;
   }
 
   .input-content::before {
@@ -398,6 +388,7 @@ table {
     padding-inline: 1em;
     padding-block: 1.2em;
     grid-template-columns: 1fr;
+    height: 100%;
   }
 
   .input-type {
@@ -421,7 +412,7 @@ table {
     padding-block: 0.7em;
     border: none;
     transition: all 1s ease-in-out;
-    border-bottom: 1px solid hsl(221, 26%, 43%);
+    border: 1px solid hsl(221, 26%, 43%);
   }
 
   .input-is:hover {

@@ -1,24 +1,8 @@
 .footer {
-  background-color: #333333;
-  color: #ffffff;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-}
-
-@media (min-width: 768px) {
-  .footer {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.footer p {
-  margin: 0;
-  padding: 5px;
-}
-
-.footer p:not(:last-child) {
-  border-right: 1px solid #ffffff;
+  background: linear-gradient(
+    315deg,
+    rgb(41, 41, 41) 3%,
+    rgb(27, 27, 27) 38%,
+    rgb(13, 13, 13) 68%
+  );
 }

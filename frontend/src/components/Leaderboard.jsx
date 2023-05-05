@@ -15,7 +15,7 @@ function secondsToMinutesAndSeconds(time) {
 
 function Leaderboard({ players }) {
   return (
-    <div className="input-container max-w-[100vw] max-h-[100vh] mb-20">
+    <div className="input-container">
       <div className="input-content">
         <div className="input-dist">
           <div className="input-type">
