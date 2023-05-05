@@ -137,8 +137,8 @@ function App() {
   return (
     <div className="relative">
       <div className="wave" />
-      <div className="wave" />
-      <div className="wave" />
+      <div className="wave2" />
+      <div className="wave3" />
       <Header />
 
       <Routes>

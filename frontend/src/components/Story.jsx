@@ -5,7 +5,7 @@ import React, { useState } from "react";
 function Story({ endGame, setPosition }) {
   const [chapter, setChapter] = useState("WELCOME !!!");
   const [message, setMessage] = useState(
-    "La nuit tombe sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activitées criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencer"
+    "La nuit tombe sur Toronto, la ville ne ressemble plus à ce qu'elle est en journée. Les rues calmes et sereines laissent place à une atmosphère sombre et inquiétante, propice aux activités criminelles. Les lumières des lampadaires éclairent les rues désertes, illuminant les visages de ceux qui osent sortir après le coucher du soleil. Les pas des passants résonnent sur le bitume froid et glissant, faisant écho dans les ruelles sombres et étroites. Et c'est ici que tout a commencé."
   );
 
   const [result, setResult] = useState();
@@ -34,15 +34,15 @@ function Story({ endGame, setPosition }) {
     } else if (action === "chapter1") {
       setChapter("Chapitre 1");
       setMessage(
-        "Vous êtes placeholder, un jeune détective privé de Toronto, vous vous noyez dans l'alcool suite à l'échec de votre dernière enquête. Alors que vous travaillez dans votre bureau, vous entendez un bruit de vitre brisée. Que faites-vous ?"
+        "Vous êtes un jeune détective privé de Toronto, vous vous noyez dans l'alcool suite à l'échec de votre dernière enquête. Alors que vous travaillez dans votre bureau, vous entendez un bruit de vitre brisée. Que faites-vous ?"
       );
       setPosition([43.65684, -79.383153]);
       setOptions([
         {
           id: "option1",
-          text: "Vous reprenez un verre et vous vous dîtes, Fichu chat",
+          text: "Vous reprenez un verre et vous vous dîtes: 'Fichu chat !'",
           action: "lose",
-          result: "Intoxication à l'alcool vous décedez gg go next. (perdu)",
+          result: "Intoxication à l'alcool vous décedez. (perdu)",
         },
         {
           id: "option2",
@@ -76,7 +76,7 @@ function Story({ endGame, setPosition }) {
     } else if (action === "chapter3") {
       setChapter("Chapitre 3");
       setMessage(
-        "Vous reussissez a trouver le bon code et ouvrez la porte quand au moment de sortir, vous appercevez deux Gorilles arrivent en voiture. Ils vous dévisagent d'un air ahurie en vous voyant sortir des locaux. Que faites-vous ?"
+        "Vous reussissez à trouver le bon code et ouvrez la porte quand au moment de sortir, vous appercevez deux Gorilles qui arrivent en voiture. Ils vous dévisagent d'un air ahurie en vous voyant sortir des locaux. Que faites-vous ?"
       );
       setPosition([43.648022, -79.388077]);
       setResult("");
@@ -86,7 +86,7 @@ function Story({ endGame, setPosition }) {
           text: "Vous tentez la discussion.",
           action: "lose",
           result:
-            "Tu ne parles pas le gorille. Tu retournes à l'énigme 1. (tu reflechis vraiment jamais hein ?)",
+            "Tu ne parles pas le gorille. Tu retournes au chapitre 1. (tu reflechis vraiment jamais hein ?)",
         },
         {
           id: "option6",
@@ -121,7 +121,7 @@ function Story({ endGame, setPosition }) {
     } else if (action === "chapter5") {
       setChapter("Chapitre 5");
       setMessage(
-        "Vous avez reussi a trouvez les coordonées corespondante aux chutes du Niagara et en y allant votre épreuve finale vous y attend de pied ferme: AH AH ! C'est moi qui suis le suspect! dit Quentin de Vancouver, le pablo escobar canadien."
+        "Vous avez reussi a trouvez les coordonées corespondantes aux chutes du Niagara et en y allant votre épreuve finale vous y attend de pied ferme: 'AH AH ! C'est moi qui suis le suspect!' dit Quentin de Vancouver, le pablo escobar canadien."
       );
       setPosition([43.079309, -79.077782]);
       setResult("");
@@ -131,7 +131,7 @@ function Story({ endGame, setPosition }) {
           text: "Vous vous battez, mais attention ça glisse.",
           action: "lose",
           result:
-            "Vous vous battez férocement et vous êtes sur le point de glisser mais vous vous rattrapez in extremis. Par contre votre lacet ce défait, ce qui vous fait tomber au moment où vous refaites un pas. (ah ba ça cépadpo)",
+            "Vous vous battez férocement et vous êtes sur le point de glisser mais vous vous rattrapez in extremis. Par contre votre lacet se défait, ce qui vous fait tomber au moment où vous refaites un pas. (tabarnak, otsi chris de calice de ses morts!)",
         },
         {
           id: "option10",
@@ -151,13 +151,13 @@ function Story({ endGame, setPosition }) {
       setOptions([
         {
           id: "",
-          text: "",
+          text: "Enregistre ton score !",
           action: "",
           result: "",
         },
         {
           id: "",
-          text: "",
+          text: "Je peux mieux faire, let's go!",
           action: "chapter6",
           result: "",
         },
@@ -174,7 +174,7 @@ function Story({ endGame, setPosition }) {
           <button
             type="button"
             key={option.id}
-            className="text-white border-2 border-white font-medium pt-2 px-4 rounded-lg h-[60px]"
+            className="text-white border-2 border-white font-medium pt-2 px-4 rounded-l"
             onClick={() => handleOptionClick(option.action)}
           >
             {option.text}
