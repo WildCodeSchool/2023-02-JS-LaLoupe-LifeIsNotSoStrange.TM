@@ -1,11 +1,10 @@
 import "./Screen.css";
 import PropTypes from "prop-types";
-import { useState } from "react"; // import useState
-
+import { useState } from "react";
 import Map from "./MapApi";
 
 function Screen({ position }) {
-  const [currentImage, setCurrentImage] = useState(0); // initialize state for current image
+  const [currentImage, setCurrentImage] = useState(0);
 
   const images = [
     {
@@ -33,30 +32,27 @@ function Screen({ position }) {
       alt: "description2",
       id: 4,
     },
-  ]; // array of images and their descriptions
+  ];
 
   const handleClick = (index) => {
-    setCurrentImage(index); // function to change the current image
+    setCurrentImage(index);
   };
 
   return (
-    <div className="relative">
+    <div className="relative h-screen">
       <img
         src={images[currentImage].src}
         alt={images[currentImage].alt}
-        className="z-0 min-w-full max-h-[100%]"
-      />{" "}
-      {/* display the current image */}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <div className="absolute top-0 left-0 z-10 w-1/5 ">
         <Map position={position} />
       </div>
       <div className="absolute bottom-0 left-0 z-10 w-full flex justify-center">
-        {" "}
-        {/* add a row of buttons to switch between images */}
         {images.map((image, index) => (
           <button
             type="button"
-            key={images.id}
+            key={image.id}
             className={`mx-2 px-2 py-1 rounded-full ${
               currentImage === index
                 ? "bg-black text-white"
