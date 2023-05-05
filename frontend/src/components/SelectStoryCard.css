@@ -30,7 +30,7 @@
   padding: 1em;
   grid-template-rows: 0.1fr 0.7fr 0.25fr;
   background-color: hsl(296, 59%, 10%);
-  width: 10em;
+  width: 15em;
   aspect-ratio: 9/16;
   -webkit-clip-path: polygon(
     0 0,
@@ -167,7 +167,7 @@
   position: relative;
   z-index: 2;
   color: hsl(192, 100%, 88%);
-  font-size: 0.6em;
+  font-size: 1em;
   transition: all ease-in-out 2s linear;
 }
 
