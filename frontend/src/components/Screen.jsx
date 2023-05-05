@@ -54,7 +54,8 @@ function Screen({ position }) {
         {" "}
         {/* add a row of buttons to switch between images */}
         {images.map((image, index) => (
-          <button type= "button"
+          <button
+            type="button"
             key={images.id}
             className={`mx-2 px-2 py-1 rounded-full ${
               currentImage === index
