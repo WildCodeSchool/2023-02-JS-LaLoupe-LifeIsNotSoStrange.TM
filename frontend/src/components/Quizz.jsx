@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import React, { useState, useEffect } from "react";
 
 import TypeWriterEffect from "react-typewriter-effect";
@@ -7,6 +9,7 @@ import "./Quizz.css";
 const Quizz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [delay, setDelay] = useState(2000);
   const questions = [
     {
       id: 1,
@@ -49,7 +52,7 @@ const Quizz = () => {
     {
       id: 5,
       question:
-        "Je suis un cocktail classique qui a été créé au début des années 1900. Je suis fait avec du gin, du vermouth et une olive en garniture. Mon nom est également le nom d'une ville en Italie.",
+        " Pour finir : je suis un cocktail classique qui a été créé au début des années 1900. Je suis fait avec du gin, du vermouth et une olive en garniture. Mon nom est également le nom d'une ville en Italie.",
       options: ["Martini", "James bond Cocktail", "Virgin Morito", "Xavier ?"],
       correctAnswer: "Martini",
     },
@@ -61,6 +64,7 @@ const Quizz = () => {
   const handleAnswer = (answer) => {
     setAnswers({ ...answers, [currentQuestion]: answer });
     setCurrentQuestion(currentQuestion + 1);
+    setDelay(0);
   };
   // const handleAnswer = (answer) => {
   //   setAnswers({ ...answers, [currentQuestion]: answer });
@@ -90,16 +94,10 @@ const Quizz = () => {
       {/* <p className="p-2 animate-typing border-r-2 whitespace-nowrap tracking-widest border-r-white pr-5 text-black font-extrabold">
         {questions[currentQuestion].question}
       </p> */}
-      <p>
-        <TypeWriterEffect
-          className="p-2  border-r-white pr-5 text-black font-extrabold"
-          textStyle={{ fontFamily: "Red Hat Display" }}
-          startDelay={100}
-          cursorColor="black"
-          text={questions[currentQuestion].question}
-          typeSpeed={40}
-        />
-      </p>
+      <TypeWriter
+        question={questions[currentQuestion].question}
+        delay={delay}
+      />
       <ul>
         {questions[currentQuestion].options.map((option) => (
           <li className="p-3" key={option.id}>
@@ -115,6 +113,28 @@ const Quizz = () => {
       </ul>
     </div>
   );
+};
+
+// eslint-disable-next-line react/no-unstable-nested-components
+const TypeWriter = ({ question, delay }) => {
+  return (
+    <p>
+      <TypeWriterEffect
+        className="p-2  border-r-white pr-5 text-black font-extrabold"
+        textStyle={{ fontFamily: "Red Hat Display" }}
+        startDelay={100}
+        cursorColor="black"
+        // multiText={questions.map((question) => question.question)}
+        multiTextDelay={delay}
+        text={question}
+        typeSpeed={30}
+      />
+    </p>
+  );
+};
+TypeWriter.propTypes = {
+  question: PropTypes.string.isRequired,
+  delay: PropTypes.number.isRequired,
 };
 
 export default Quizz;
