@@ -23,7 +23,7 @@ function Story({ endGame, setPosition }) {
       setMessage();
       const lostOption = options.find((option) => option.action === "lose");
       setResult(lostOption.result);
-      setPosition([51.5, -0.1]);
+      setPosition([43.65684, -79.383153]);
       setOptions([
         {
           id: "option6",
@@ -36,6 +36,7 @@ function Story({ endGame, setPosition }) {
       setMessage(
         "Vous êtes placeholder, un jeune détective privé de Toronto, vous vous noyez dans l'alcool suite à l'échec de votre dernière enquête. Alors que vous travaillez dans votre bureau, vous entendez un bruit de vitre brisée. Que faites-vous ?"
       );
+      setPosition([43.65684, -79.383153]);
       setOptions([
         {
           id: "option1",
@@ -56,7 +57,7 @@ function Story({ endGame, setPosition }) {
       setMessage(
         "Vous vous rapprochez de la fenêtre et distinguez une silhouette ressemblant au suspect principal de votre précédente enquête (c'était un échec). Vous prenez votre chapeau de détective et courrez dans la rue pour interpeller le suspect. Vous arrivez dans la rue et voyez le suspect partir dans une ruelle, vous décidez de le suivre, mais un homme vous assomme. Vous vous réveillez dans une pièce. Votre seul moyen de s'échapper est de trouver le code qui ouvre la porte. Que faites-vous ?"
       );
-      setPosition([31.5, -0.1]);
+      setPosition([43.657134, -79.382907]);
       setResult("");
       setOptions([
         {
@@ -77,7 +78,7 @@ function Story({ endGame, setPosition }) {
       setMessage(
         "Vous reussissez a trouver le bon code et ouvrez la porte quand au moment de sortir, vous appercevez deux Gorilles arrivent en voiture. Ils vous dévisagent d'un air ahurie en vous voyant sortir des locaux. Que faites-vous ?"
       );
-      setPosition([81.5, -0.1]);
+      setPosition([43.648022, -79.388077]);
       setResult("");
       setOptions([
         {
@@ -100,7 +101,7 @@ function Story({ endGame, setPosition }) {
       setMessage(
         "Vous réussissez à vous enfuir. Heureusement, tu es plus rapide qu'un gorille. Eh oui, les gorilles ne savent pas très bien conduire. Tu te retournes pour t'assurer que tu les as bien semé et tu reçois un appel de ton ancien partenaire de police: Xavier, ça fait un bail que tu n'avais plus de nouvelle de lui. Que fais-tu ?"
       );
-      setPosition([11.5, -0.1]);
+      setPosition([43.646287, -79.387445]);
 
       setOptions([
         {
@@ -122,7 +123,7 @@ function Story({ endGame, setPosition }) {
       setMessage(
         "Vous avez reussi a trouvez les coordonées corespondante aux chutes du Niagara et en y allant votre épreuve finale vous y attend de pied ferme: AH AH ! C'est moi qui suis le suspect! dit Quentin de Vancouver, le pablo escobar canadien."
       );
-      setPosition([51.5, -0.1]);
+      setPosition([43.079309, -79.077782]);
       setResult("");
       setOptions([
         {
