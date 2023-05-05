@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import PropTypes from "prop-types";
+
+import React, { useState, useEffect } from "react";
+
+import TypeWriterEffect from "react-typewriter-effect";
+
+import "./Quizz.css";
 
 const Quizz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [delay, setDelay] = useState(2000);
   const questions = [
     {
       id: 1,
       question:
         "Hey salut! Tu es le nouveau que Billy a embauché c'est ça? Bon écoute, je n'ai pas le temps de t'expliquer le boulot. On va être en plein rush et notre clientèle n'aime pas attendre ! Ne te plante pas dans les commandes! Si tu as un bon chiffre à la fin du service, peut-être que tu seras l'employé de l'année, un truc dans le genre. Je te laisse avec la carte des cocktails, ça peut toujours servir. Par contre elle ne comprend que l'anglais, ouais je sais c'est pas ouf.",
       options: ["Moi je venais pour les wc", "Ok", "C'est pas ouf"],
-      correctAnswer: "ok",
+      correctAnswer: "Ok",
     },
     {
       id: 2,
@@ -45,16 +52,26 @@ const Quizz = () => {
     {
       id: 5,
       question:
-        "Je suis un cocktail classique qui a été créé au début des années 1900. Je suis fait avec du gin, du vermouth et une olive en garniture. Mon nom est également le nom d'une ville en Italie.",
+        " Pour finir : je suis un cocktail classique qui a été créé au début des années 1900. Je suis fait avec du gin, du vermouth et une olive en garniture. Mon nom est également le nom d'une ville en Italie.",
       options: ["Martini", "James bond Cocktail", "Virgin Morito", "Xavier ?"],
       correctAnswer: "Martini",
     },
   ];
+  useEffect(() => {
+    document.activeElement?.blur();
+  }, [answers]);
 
   const handleAnswer = (answer) => {
     setAnswers({ ...answers, [currentQuestion]: answer });
     setCurrentQuestion(currentQuestion + 1);
+    setDelay(0);
   };
+  // const handleAnswer = (answer) => {
+  //   setAnswers({ ...answers, [currentQuestion]: answer });
+  //   if (currentQuestion < questions.length - 1) {
+  //     setCurrentQuestion(currentQuestion + 1);
+  //   }
+  // };
 
   const score = Object.values(answers).reduce((acc, answer, index) => {
     return answer === questions[index].correctAnswer ? acc + 1 : acc;
@@ -72,16 +89,20 @@ const Quizz = () => {
   }
 
   return (
-    <div className="font-bold m-4 rounded-md flex-col bg-gradient-to-tr to-blue-400 from-green-500 p-10">
-      <h1>Commande {currentQuestion + 1}</h1>
-      <p className="  m-auto animate-typing whitespace-normal overflow-hidden border-r-2 border-r-white pr-5 text-white font-bold">
+    <div className=" font-bold m-10 rounded-md flex-col bg-gradient-to-tr to-blue-400 from-green-500 p-4">
+      <h1 className="p-2">Commande </h1>
+      {/* <p className="p-2 animate-typing border-r-2 whitespace-nowrap tracking-widest border-r-white pr-5 text-black font-extrabold">
         {questions[currentQuestion].question}
-      </p>
+      </p> */}
+      <TypeWriter
+        question={questions[currentQuestion].question}
+        delay={delay}
+      />
       <ul>
         {questions[currentQuestion].options.map((option) => (
-          <li className="" key={option.id}>
+          <li className="p-3" key={option.id}>
             <button
-              className="my-4  text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              className="btn "
               type="button"
               onClick={() => handleAnswer(option)}
             >
@@ -92,6 +113,28 @@ const Quizz = () => {
       </ul>
     </div>
   );
+};
+
+// eslint-disable-next-line react/no-unstable-nested-components
+const TypeWriter = ({ question, delay }) => {
+  return (
+    <p>
+      <TypeWriterEffect
+        className="p-2  border-r-white pr-5 text-black font-extrabold"
+        textStyle={{ fontFamily: "Red Hat Display" }}
+        startDelay={100}
+        cursorColor="black"
+        // multiText={questions.map((question) => question.question)}
+        multiTextDelay={delay}
+        text={question}
+        typeSpeed={30}
+      />
+    </p>
+  );
+};
+TypeWriter.propTypes = {
+  question: PropTypes.string.isRequired,
+  delay: PropTypes.number.isRequired,
 };
 
 export default Quizz;

@@ -1,4 +1,4 @@
-li:hover {
+.li-navbar:hover {
   @apply bg-gradient-to-r from-fuchsia-900 via-fuchsia-800 to-fuchsia-700;
 }
 
