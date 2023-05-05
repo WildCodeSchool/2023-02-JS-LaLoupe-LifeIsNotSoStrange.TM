@@ -1,3 +1,8 @@
 .footer {
-  background-color: rgb(0, 0, 0);
+  background: linear-gradient(
+    315deg,
+    rgb(41, 41, 41) 3%,
+    rgb(27, 27, 27) 38%,
+    rgb(13, 13, 13) 68%
+  );
 }
