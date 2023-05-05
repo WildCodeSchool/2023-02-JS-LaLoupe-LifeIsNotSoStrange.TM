@@ -63,13 +63,13 @@ export default function NavBar() {
         </section>
 
         <ul className="desktop-menu hidden space-x-8 md:flex">
-          <li>
+          <li className="li-navbar">
             <Link to="/">Accueil</Link>
           </li>
-          <li>
+          <li className="li-navbar">
             <Link to="/leaderboard">Classement</Link>
           </li>
-          <li>
+          <li className="li-navbar">
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
