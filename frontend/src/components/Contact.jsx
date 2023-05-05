@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./Contact.css";
-import Rating from "./Star";
-import CommentBox from "./Suggestion";
+import Rating from "./Rating";
+import Suggestion from "./Suggestion";
 
-function FormWithMultipleState() {
+function Contact() {
   const [pseudo, setPseudo] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -102,8 +102,8 @@ function FormWithMultipleState() {
           </div>
         </div>
       </form>
-      <CommentBox />
+      <Suggestion />
     </>
   );
 }
-export default FormWithMultipleState;
+export default Contact;
