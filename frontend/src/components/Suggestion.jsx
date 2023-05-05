@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CommentBox = () => {
+const Suggestion = () => {
   const [comment, setComment] = useState("");
   const [commentsList, setCommentsList] = useState([]);
 
@@ -67,4 +67,4 @@ const CommentBox = () => {
   );
 };
 
-export default CommentBox;
+export default Suggestion;

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./Star.css";
+import "./Rating.css";
 
 const Rating = ({ rating, setRating }) => {
   const handleRating = (value, event) => {

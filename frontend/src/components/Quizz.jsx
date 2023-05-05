@@ -73,6 +73,27 @@ const Quizz = () => {
   //   }
   // };
 
+  // eslint-disable-next-line react/no-unstable-nested-components
+  const TypeWriter = ({ question }) => {
+    return (
+      <p>
+        <TypeWriterEffect
+          className="p-2  border-r-white pr-5 text-black font-extrabold"
+          textStyle={{ fontFamily: "Red Hat Display" }}
+          startDelay={100}
+          cursorColor="black"
+          // multiText={questions.map((question) => question.question)}
+          multiTextDelay={delay}
+          text={question}
+          typeSpeed={20}
+        />
+      </p>
+    );
+  };
+  TypeWriter.propTypes = {
+    question: PropTypes.string.isRequired,
+  };
+
   const score = Object.values(answers).reduce((acc, answer, index) => {
     return answer === questions[index].correctAnswer ? acc + 1 : acc;
   }, 0);
@@ -94,10 +115,7 @@ const Quizz = () => {
       {/* <p className="p-2 animate-typing border-r-2 whitespace-nowrap tracking-widest border-r-white pr-5 text-black font-extrabold">
         {questions[currentQuestion].question}
       </p> */}
-      <TypeWriter
-        question={questions[currentQuestion].question}
-        delay={delay}
-      />
+      <TypeWriter question={questions[currentQuestion].question} />
       <ul>
         {questions[currentQuestion].options.map((option) => (
           <li className="p-3" key={option.id}>
@@ -113,28 +131,6 @@ const Quizz = () => {
       </ul>
     </div>
   );
-};
-
-// eslint-disable-next-line react/no-unstable-nested-components
-const TypeWriter = ({ question, delay }) => {
-  return (
-    <p>
-      <TypeWriterEffect
-        className="p-2  border-r-white pr-5 text-black font-extrabold"
-        textStyle={{ fontFamily: "Red Hat Display" }}
-        startDelay={100}
-        cursorColor="black"
-        // multiText={questions.map((question) => question.question)}
-        multiTextDelay={delay}
-        text={question}
-        typeSpeed={30}
-      />
-    </p>
-  );
-};
-TypeWriter.propTypes = {
-  question: PropTypes.string.isRequired,
-  delay: PropTypes.number.isRequired,
 };
 
 export default Quizz;
