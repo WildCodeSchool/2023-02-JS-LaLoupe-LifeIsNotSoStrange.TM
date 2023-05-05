@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import PropTypes from "prop-types";
 import Timer from "./Timer";
 import Screen from "./Screen";
@@ -16,9 +15,9 @@ export default function PartyGame({
   const [position, setPosition] = useState([43.7, -79.41]); // initial position: Toronto
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <AvatarDisplay avatarParams={avatarParams} />
-      <p className="right-[2.3%] top-[22%] z-20 absolute text-xl">
+      <p className="absolute top-[22%] right-[2.3%] z-20 text-xl">
         {avatarParams.pseudo}
       </p>
       <Timer
@@ -31,6 +30,7 @@ export default function PartyGame({
     </div>
   );
 }
+
 PartyGame.propTypes = {
   tempsRestant: PropTypes.string.isRequired,
   setTempsRestant: PropTypes.func.isRequired,

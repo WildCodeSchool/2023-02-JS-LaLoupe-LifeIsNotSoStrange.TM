@@ -166,15 +166,15 @@ function Story({ endGame, setPosition }) {
   };
 
   return (
-    <div className="choicesDisplay rounded-lg shadow-lg p-6 w-[80%] ml-auto mr-auto">
+    <div className="choicesDisplay rounded-lg shadow-lg p-6 mx-auto lg:w-2/3 xl:w-1/2">
       <h1 className="text-3xl font-bold text-white mb-4">{chapter}</h1>
       <p className="text-lg text-gray-300 mb-8">{message}</p>
-      <div className="space-y-4">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         {options.map((option) => (
           <button
             type="button"
             key={option.id}
-            className=" text-white border-2 border-white font-medium pt-2 px-4 rounded-lg h-[60px] mr-[32px]"
+            className="text-white border-2 border-white font-medium pt-2 px-4 rounded-lg h-[60px]"
             onClick={() => handleOptionClick(option.action)}
           >
             {option.text}
