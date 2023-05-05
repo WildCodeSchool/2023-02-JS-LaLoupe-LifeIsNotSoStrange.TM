@@ -9,7 +9,7 @@ function Map({ position }) {
 
   useEffect(() => {
     if (mapRef.current) {
-      mapRef.current.flyTo(position, 16);
+      mapRef.current.flyTo(position, 18);
     }
   }, [position]);
 
