@@ -1,0 +1,8 @@
+span.gray {
+  color: gray;
+  cursor: pointer;
+  font-size: xx-large;
+}
+span.gray.gold {
+  color: gold;
+}

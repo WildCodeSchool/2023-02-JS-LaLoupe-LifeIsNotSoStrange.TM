@@ -1,0 +1,30 @@
+.li-navbar:hover {
+  @apply bg-gradient-to-r from-fuchsia-900 via-fuchsia-800 to-fuchsia-700;
+}
+
+ul {
+  margin-right: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    color: white;
+  }
+  .hideMenuNav {
+    display: none;
+  }
+  .showMenuNav {
+    background-color: black;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}

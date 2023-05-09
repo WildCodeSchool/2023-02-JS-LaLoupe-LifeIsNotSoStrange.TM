@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Press Start 2P";
+  src: local("Press Start 2P"),
+    url("src/assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
+      format("truetype");
+}
+.Chronometer {
+  width: 30%;
+  text-align: center;
+  height: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: black;
+  border: white 2px solid;
+  color: white;
+  border-radius: 3px;
+  box-shadow: 0px 0px 1px 0px #656565;
+  font-family: "Press Start 2P", cursive;
+}
