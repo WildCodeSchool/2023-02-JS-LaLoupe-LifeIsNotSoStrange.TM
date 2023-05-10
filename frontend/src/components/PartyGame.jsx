@@ -30,7 +30,7 @@ export default function PartyGame({
 }
 
 PartyGame.propTypes = {
-  tempsRestant: PropTypes.string.isRequired,
+  tempsRestant: PropTypes.number.isRequired,
   setTempsRestant: PropTypes.func.isRequired,
   setTimer: PropTypes.func.isRequired,
   endGame: PropTypes.func.isRequired,

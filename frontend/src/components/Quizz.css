@@ -141,3 +141,8 @@
 .btn:where(:hover, :focus) {
   color: #fff;
 }
+
+.react-typewriter-text-wrap h1 {
+  --color: #fff;
+  color: var(--color);
+}
