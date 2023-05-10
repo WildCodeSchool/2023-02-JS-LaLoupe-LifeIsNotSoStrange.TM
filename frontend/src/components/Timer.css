@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Press Start 2P";
   src: local("Press Start 2P"),
-    url("src/assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
+    url("/src/assets/fonts/Press_Start_2P/PressStart2P-Regular.ttf")
       format("truetype");
 }
 .Chronometer {
