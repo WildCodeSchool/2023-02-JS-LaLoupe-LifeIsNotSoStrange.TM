@@ -1,21 +1,43 @@
 import PropTypes from "prop-types";
+// import TypeWriterEffect from "react-typewriter-effect";
 
 import React, { useState, useEffect } from "react";
 
-import TypeWriterEffect from "react-typewriter-effect";
-
 import "./Quizz.css";
+
+const TypeWriter = ({ question }) => {
+  return (
+    <p className="p-2  border-r-white pr-5 text-white font-extrabold">
+      {question}
+    </p>
+    // <TypeWriterEffect
+    //   className="p-2  border-r-white pr-5 text-black font-extrabold"
+    //   textStyle={{ fontFamily: "Red Hat Display" }}
+    //   startDelay={100}
+    //   cursorColor="black"
+    //   text={question}
+    //   typeSpeed={20}
+    // />
+  );
+};
+TypeWriter.propTypes = {
+  question: PropTypes.string.isRequired,
+};
 
 const Quizz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [delay, setDelay] = useState(2000);
+
   const questions = [
     {
       id: 1,
       question:
         "Hey salut! Tu es le nouveau que Billy a embauché c'est ça? Bon écoute, je n'ai pas le temps de t'expliquer le boulot. On va être en plein rush et notre clientèle n'aime pas attendre ! Ne te plante pas dans les commandes! Si tu as un bon chiffre à la fin du service, peut-être que tu seras l'employé de l'année, un truc dans le genre. Je te laisse avec la carte des cocktails, ça peut toujours servir. Par contre elle ne comprend que l'anglais, ouais je sais c'est pas ouf.",
-      options: ["Moi je venais pour les wc", "Ok", "C'est pas ouf"],
+      options: [
+        { id: 1, option: "Moi je venais pour les wc" },
+        { id: 2, option: "Ok" },
+        { id: 3, option: "C'est pas ouf" },
+      ],
       correctAnswer: "Ok",
     },
     {
@@ -23,10 +45,10 @@ const Quizz = () => {
       question:
         "Salut! Moi c'est Fizz. Tu me mets la même chose que d'habitude! Mais si, le truc avec du powdered sugar! Allez avec ça je me sens comme Napoléon.",
       options: [
-        "Japanese Fizz",
-        "Amaretto Fizz",
-        "Imperial Fizz",
-        "Royal Gin Fizz",
+        { id: 1, option: "Japanese Fizz" },
+        { id: 2, option: "Amaretto Fizz" },
+        { id: 3, option: "Imperial Fizz" },
+        { id: 4, option: "Royal Gin Fizz" },
       ],
       correctAnswer: "Imperial Fizz",
     },
@@ -35,10 +57,10 @@ const Quizz = () => {
       question:
         "Yop, J'ai besoin d'un petit remontant! Quelque chose qui me donne des ailes, et qui me fait penser à D and D. ",
       options: [
-        "Dodo Airlines",
-        "Dragon Fly",
-        "Flying Outchman",
-        "Butterfly Effect",
+        { id: 1, option: "Dodo Airlines" },
+        { id: 2, option: "Dragon Fly" },
+        { id: 3, option: "Flying Outchman" },
+        { id: 4, option: "Butterfly Effect" },
       ],
       correctAnswer: "Dragon Fly",
     },
@@ -46,14 +68,24 @@ const Quizz = () => {
       id: 4,
       question:
         "J'aurai besoin d'un verre, mais surtout pas ce bleu immonde où des poissons sont dedans.",
-      options: ["Aqua poney", "National Aquarium", "Aquamarine", "Aqualand"],
+      options: [
+        { id: 1, option: "Aqua poney" },
+        { id: 2, option: "National Aquarium" },
+        { id: 3, option: "Aquamarine" },
+        { id: 4, option: "Aqualand" },
+      ],
       correctAnswer: "National Aquarium",
     },
     {
       id: 5,
       question:
         " Pour finir : je suis un cocktail classique qui a été créé au début des années 1900. Je suis fait avec du gin, du vermouth et une olive en garniture. Mon nom est également le nom d'une ville en Italie.",
-      options: ["Martini", "James bond Cocktail", "Virgin Morito", "Xavier ?"],
+      options: [
+        { id: 1, option: "Martini" },
+        { id: 2, option: "James bond Cocktail" },
+        { id: 3, option: "Virgin Morito" },
+        { id: 4, option: "Xavier ?" },
+      ],
       correctAnswer: "Martini",
     },
   ];
@@ -64,7 +96,6 @@ const Quizz = () => {
   const handleAnswer = (answer) => {
     setAnswers({ ...answers, [currentQuestion]: answer });
     setCurrentQuestion(currentQuestion + 1);
-    setDelay(0);
   };
   // const handleAnswer = (answer) => {
   //   setAnswers({ ...answers, [currentQuestion]: answer });
@@ -72,27 +103,6 @@ const Quizz = () => {
   //     setCurrentQuestion(currentQuestion + 1);
   //   }
   // };
-
-  // eslint-disable-next-line react/no-unstable-nested-components
-  const TypeWriter = ({ question }) => {
-    return (
-      <p>
-        <TypeWriterEffect
-          className="p-2  border-r-white pr-5 text-black font-extrabold"
-          textStyle={{ fontFamily: "Red Hat Display" }}
-          startDelay={100}
-          cursorColor="black"
-          // multiText={questions.map((question) => question.question)}
-          multiTextDelay={delay}
-          text={question}
-          typeSpeed={20}
-        />
-      </p>
-    );
-  };
-  TypeWriter.propTypes = {
-    question: PropTypes.string.isRequired,
-  };
 
   const score = Object.values(answers).reduce((acc, answer, index) => {
     return answer === questions[index].correctAnswer ? acc + 1 : acc;
@@ -112,9 +122,6 @@ const Quizz = () => {
   return (
     <div className=" font-bold m-10 rounded-md flex-col bg-gradient-to-tr to-blue-400 from-green-500 p-4">
       <h1 className="p-2">Commande </h1>
-      {/* <p className="p-2 animate-typing border-r-2 whitespace-nowrap tracking-widest border-r-white pr-5 text-black font-extrabold">
-        {questions[currentQuestion].question}
-      </p> */}
       <TypeWriter question={questions[currentQuestion].question} />
       <ul>
         {questions[currentQuestion].options.map((option) => (
@@ -122,9 +129,9 @@ const Quizz = () => {
             <button
               className="btn "
               type="button"
-              onClick={() => handleAnswer(option)}
+              onClick={() => handleAnswer(option.option)}
             >
-              {option}
+              {option.option}
             </button>
           </li>
         ))}
